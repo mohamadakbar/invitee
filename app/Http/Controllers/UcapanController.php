@@ -1,0 +1,167 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Model\Ucapan;
+//use Illuminate\Contracts\Session\Session;
+use Illuminate\Http\Request;
+use Validator;
+use Response;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Input;
+class UcapanController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+//        if(request()->ajax())
+//        {
+//            return datatables()->of(Ucapan::latest()->get())
+//                ->make(true);
+//        }
+//        return view('undangan.satu');
+
+//        $ucapan = Ucapan::all();
+////        dd($ucapan);
+//        return View('undangan.satu', ['ucapan' => $ucapan]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function store(Request $request)
+    {
+        $nama   = $request->nama;
+        $ucapan = $request->ucapan;
+        $token  = $request->token;
+//        $token  = $_POST['g-recaptcha-response'];
+
+//        dd($token);
+        if ($token || $nama || $ucapan){
+            $client     = new Client();
+            $response   = $client->post('https://www.google.com/recaptcha/api/siteverify', [
+                'form_params' => [
+                    'secret' => '6LeB_-4bAAAAAKeWNhO12Vb-rYF67jG9fXQtHff0',
+                    'response' => $token
+                ]
+            ]);
+
+            $result = json_decode($response->getBody()->getContents());
+//            dd($result);
+            if ($result->success == true){
+                Ucapan::create([
+                    'nama'      => $request->nama,
+                    'ucapan'    => $request->ucapan,
+                ]);
+
+                return response()->json(
+                    [
+                        'success' => true,
+                        'message' => 'Ucapan kamu sudah berhasil disimpan, terima kasih yaa ..'
+                    ]
+                );
+            }else{
+                return response()->json(
+                    [
+                        'success' => false,
+                        'message' => 'Mohon isi Captcha nya yaa ..'
+                    ]
+                );
+            }
+
+        }
+
+//        $validate = Validator::make(Input::all(), [
+//            'g-recaptcha-response' => 'required|captcha'
+//        ]);
+//
+//        $validator= $this->validate($request,['g-recaptcha-response' => 'required|recaptcha']);
+//
+//        if ($validate->fails()) {
+//            return response()->json($validate->messages(), \Illuminate\Http\Response::HTTP_BAD_REQUEST);
+//        }
+
+//        $request->validate([
+//            'nama' => 'required',
+//            'ucapan' => 'required',
+//            'g-recaptcha-response' => 'required|captcha'
+//        ]);
+//        return response()->json(
+//            [
+//                'errors' => true,
+//                'message' => 'Data inserted fail'
+//            ]
+//        );
+//
+
+//
+//        return response()->json(
+//            [
+//                'success' => true,
+//                'message' => 'Data inserted successfully'
+//            ]
+//        );
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Ucapan  $ucapan
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Ucapan $ucapan)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Ucapan  $ucapan
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Ucapan $ucapan)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Ucapan  $ucapan
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Ucapan $ucapan)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Ucapan  $ucapan
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Ucapan $ucapan)
+    {
+        //
+    }
+}

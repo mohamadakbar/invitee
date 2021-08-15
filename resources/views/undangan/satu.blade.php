@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Undangan Kita</title>
+    <title>Invitee</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -138,13 +138,13 @@
             </div>
             <div class="mobile-bottom-nav__item">
                 <div class="mobile-bottom-nav__item-content">
-                    <a href="#about"><i class="fa fa-map-marker fa-2x" style="color: #fff"></i><br>Location</a>
+                    <a href="#about"><i class="fa fa-envelope-open fa-2x" style="color: #fff"></i><br>Events</a>
                 </div>
             </div>
 
             <div class="mobile-bottom-nav__item">
                 <div class="mobile-bottom-nav__item-content">
-                    <a href="#events"><i class="fa fa-envelope-open fa-2x" style="color: #fff"></i><br>Events</a>
+                    <a href="#events"><i class="fa fa-map-marker fa-2x" style="color: #fff"></i><br>Location</a>
                 </div>
             </div>
 
@@ -156,7 +156,7 @@
 
             <div class="mobile-bottom-nav__item">
                 <div class="mobile-bottom-nav__item-content">
-                    <a href="#contact"><i class="fa fa-comment fa-2x" style="color: #fff"></i><br>Ucapan</a>
+                    <a href="#contact"><i class="fa fa-comment fa-2x" style="color: #fff"></i><br>Comment</a>
                 </div>
             </div>
 
@@ -172,11 +172,11 @@
             <div class="row">
                 <div class="col-lg-8">
                     <h1>{{ ucfirst($form->nama_panggilan_p) }} <span>& {{ ucfirst($form->nama_panggilan_w) }}</span></h1>
-{{--                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>--}}
+                    {{--                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>--}}
 
-{{--                    <div class="btns">--}}
-{{--                        <a href="#about" class="btn-menu animated fadeInUp scrollto">Lihat Undangan</a>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="btns">--}}
+                    {{--                        <a href="#about" class="btn-menu animated fadeInUp scrollto">Lihat Undangan</a>--}}
+                    {{--                    </div>--}}
                 </div>
                 <div class="col-lg-4 mt-2 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in"
                      data-aos-delay="200">
@@ -201,8 +201,8 @@
             <div class="swiper-slide">
                 <div class="row event-item">
                     <div class="col-lg-5">
-                        <img src="{{ asset('/upload_img/')}}/{{ $form->foto_p }}" class="img-fluid" alt="" style="float: left">
-                        <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_w) }}</h3> <h5 class="text-center"> Putera dari Bapak {{ $form->nama_ortu_p_p }} dan Ibu {{ $form->nama_ortu_p_w }}</h5></p>
+                        <img src="{{ asset('/upload_img/')}}/{{ $form->foto_w }}" class="img-fluid" alt="" style="float: left">
+                        <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_w) }}</h3> <h5 class="text-center"> Puteri dari Bapak {{ $form->nama_ortu_w_p }} dan Ibu {{ $form->nama_ortu_w_w }}</h5></p>
                     </div>
 
                     <div class="col-lg-2 centered">
@@ -212,10 +212,10 @@
                     </div>
 
                     <div class="col-lg-5">
-{{--                        <img style="vertical-align:middle" src="https://via.placeholder.com/60x60">--}}
-                        <img src="{{ asset('/upload_img/')}}/{{ $form->foto_w }}" class="img-fluid" alt="" style="vertical-align:middle; float: right">
-{{--                        <h3 style="float: right">{{ ucfirst($form->nama_lengkap_p) }} S.Kom</h3>--}}
-                        <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_p) }}</h3> <h5 class="text-center"> Putera dari Bapak {{ $form->nama_ortu_w_p }} dan Ibu {{ $form->nama_ortu_w_w }}</h5></p>
+                        {{--                        <img style="vertical-align:middle" src="https://via.placeholder.com/60x60">--}}
+                        <img src="{{ asset('/upload_img/')}}/{{ $form->foto_p }}" class="img-fluid" alt="" style="vertical-align:middle; float: right">
+                        {{--                        <h3 style="float: right">{{ ucfirst($form->nama_lengkap_p) }} S.Kom</h3>--}}
+                        <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_p) }}</h3> <h5 class="text-center"> Putera dari Bapak {{ $form->nama_ortu_p_p }} dan Ibu {{ $form->nama_ortu_p_w }}</h5></p>
                     </div>
                 </div>
             </div><!-- End testimonial item -->
@@ -234,7 +234,7 @@
 
             <div class="section-title d-flex justify-content-center">
                 <!-- <h2>Why Us</h2> -->
-                <p class="ass">Assalamu'alaikum Warahmatullah</p>
+                <p class="ass">Assalamu'alaikum Wr. Wb</p>
                 <!-- <h1 style="font-family:'UVF Aphrodite Pro';font-weight:normal;font-size:42px">AaBbCcDdEeFfGgHhŞşIıİi Example</h1> -->
             </div>
 
@@ -251,7 +251,7 @@
                     <div class="box" data-aos="zoom-in" data-aos-delay="100">
                         <img src="{{ asset('/template/')}}/img/ring.png" class="img-fluid" alt="" style="float: left;border-radius: 20px; height: 15%;width: 15%;"><span>  AKAD NIKAH</span>
                         <h6 style="color: #666666"><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_akad)->format('l, j F Y') }}</h6>
-                        <p><i class="fa fa-clock-o"></i>  {{ $form->mulai_akad }} WIB</p>
+                        <p><i class="fa fa-clock-o"></i>  {{ $form->mulai_akad }} WIB - {{ $form->selesai_akad }} WIB</p>
                         <p><i class="fa fa-map-marker"></i>  {{ ucfirst($form->tempat_akad) }} {{ ucfirst($form->alamat_akad) }}</p>
                     </div>
                 </div>
@@ -260,17 +260,17 @@
                     <div class="box" data-aos="zoom-in" data-aos-delay="200">
                         <img src="{{ asset('/template/')}}/img/res.png" class="img-fluid" alt="" style="float: left;border-radius: 15px; height: 15%;width: 15%;"><span>RESEPSI</span>
                         <h6 style="color: #666666"><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_res)->format('l, j F Y') }}</h5>
-                        <p><i class="fa fa-clock-o"></i>  {{ $form->mulai_res }} WIB</p>
-                        <p><i class="fa fa-map-marker"></i>  {{ $form->tempat_res }} {{ $form->alamat_res }}</p>
+                            <p><i class="fa fa-clock-o"></i>  {{ $form->mulai_res }} WIB - {{ $form->selesai_res }}</p>
+                            <p><i class="fa fa-map-marker"></i>  {{ $form->tempat_res }} {{ $form->alamat_res }}</p>
                     </div>
                 </div>
 
             </div>
-{{--            <h3 class="d-flex justify-content-center">{{ date('d-m-Y', strtotime($form->tgl_res)) }}</h3><br>--}}
-{{--            <h3 class="d-flex justify-content-center">{{\Carbon\Carbon::parse($form->tgl_res)->format('l, j F Y') }}</h3><br>--}}
-{{--            <div class="d-flex justify-content-center">di {{ $form->tempat_res }} - {{ $form->alamat_res }}--}}
-{{--            </div>--}}
-{{--            <br><br>--}}
+            {{--            <h3 class="d-flex justify-content-center">{{ date('d-m-Y', strtotime($form->tgl_res)) }}</h3><br>--}}
+            {{--            <h3 class="d-flex justify-content-center">{{\Carbon\Carbon::parse($form->tgl_res)->format('l, j F Y') }}</h3><br>--}}
+            {{--            <div class="d-flex justify-content-center">di {{ $form->tempat_res }} - {{ $form->alamat_res }}--}}
+            {{--            </div>--}}
+            {{--            <br><br>--}}
         </div>
     </section><!-- End Why Us Section -->
 
@@ -300,7 +300,7 @@
 
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-{{--                <h2>Gallery</h2>--}}
+                {{--                <h2>Gallery</h2>--}}
                 <h1>Gallery</h1>
             </div>
         </div>
@@ -310,15 +310,15 @@
             <div class="row">
 
                 @foreach($gallery as $gal)
-{{--                    {{ $gal }}--}}
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <a href="{{ asset('gallery_img')}}/{{ $gal->foto_gallery }}" class="gallery-lightbox"
-                           data-gall="gallery-item">
-                            <img src="{{ asset('gallery_img')}}/{{ $gal->foto_gallery }}" alt="" class="img-fluid">
-                        </a>
+                    {{--                    {{ $gal }}--}}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="gallery-item">
+                            <a href="{{ asset('gallery_img')}}/{{ $gal->foto_gallery }}" class="gallery-lightbox"
+                               data-gall="gallery-item">
+                                <img src="{{ asset('gallery_img')}}/{{ $gal->foto_gallery }}" alt="" class="img-fluid">
+                            </a>
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>
@@ -326,59 +326,59 @@
         </div>
     </section><!-- End Gallery Section -->
 
-{{--    <a class="btn btn-primary btn-sm" id="playPauseBTN" onclick="playPause()">Play &#9658;</a>--}}
+    {{--    <a class="btn btn-primary btn-sm" id="playPauseBTN" onclick="playPause()">Play &#9658;</a>--}}
 
-{{--    <!-- ======= Contact Section ======= -->--}}
-{{--    <section id="contact" class="contact">--}}
+    {{--    <!-- ======= Contact Section ======= -->--}}
+    {{--    <section id="contact" class="contact">--}}
 
-{{--        <div class="container" data-aos="fade-up">--}}
-{{--            <div class="form-group mt-3">--}}
-{{--                <h1><strong> Ucapan dan doa</strong></h1>--}}
-{{--            </div>--}}
-{{--            <div class="row mt-1">--}}
+    {{--        <div class="container" data-aos="fade-up">--}}
+    {{--            <div class="form-group mt-3">--}}
+    {{--                <h1><strong> Ucapan dan doa</strong></h1>--}}
+    {{--            </div>--}}
+    {{--            <div class="row mt-1">--}}
 
-{{--                <div class="col-lg-5 mt-2">--}}
-{{--                    <form action="{{ route('ucapan.store') }}" method="POST" role="form" class="php-email-form btn-submits">--}}
-{{--                        @csrf--}}
-{{--                        <div class="form-group form-textarea">--}}
-{{--                            <input type="hidden" name="nama" class="form-control" id="name" value="{{ $param }}">--}}
-{{--                            <textarea class="form-control formucapan" name="ucapan" rows="5" placeholder="Tulis ucapan untuk kedua mempelai" required></textarea>--}}
-{{--                        </div>--}}
+    {{--                <div class="col-lg-5 mt-2">--}}
+    {{--                    <form action="{{ route('ucapan.store') }}" method="POST" role="form" class="php-email-form btn-submits">--}}
+    {{--                        @csrf--}}
+    {{--                        <div class="form-group form-textarea">--}}
+    {{--                            <input type="hidden" name="nama" class="form-control" id="name" value="{{ $param }}">--}}
+    {{--                            <textarea class="form-control formucapan" name="ucapan" rows="5" placeholder="Tulis ucapan untuk kedua mempelai" required></textarea>--}}
+    {{--                        </div>--}}
 
-{{--                        <div class="form-group row mt-3">--}}
-{{--                            <div class="col-sm-5">--}}
-{{--                                <div class="g-recaptcha" data-sitekey="6LeB_-4bAAAAAAlRWbQYVYpWe3pmCZFy-vI-mJJ7"></div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                            <div class="col-sm-6">--}}
-{{--                                <button type="submit">Kirim Ucapan</button>--}}
-{{--                            </div>--}}
+    {{--                        <div class="form-group row mt-3">--}}
+    {{--                            <div class="col-sm-5">--}}
+    {{--                                <div class="g-recaptcha" data-sitekey="6LedcgEcAAAAAP3g_OK73A4JK-ZnaJKRmtf3lM-i"></div>--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                            <div class="col-sm-6">--}}
+    {{--                                <button type="submit">Kirim Ucapan</button>--}}
+    {{--                            </div>--}}
 
-{{--                        <div class="my-3">--}}
-{{--                            <div class="loading">Loading</div>--}}
-{{--                            <div class="error-message"></div>--}}
-{{--                            <div class="sent-message">Your message has been sent. Thank you!</div>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
+    {{--                        <div class="my-3">--}}
+    {{--                            <div class="loading">Loading</div>--}}
+    {{--                            <div class="error-message"></div>--}}
+    {{--                            <div class="sent-message">Your message has been sent. Thank you!</div>--}}
+    {{--                        </div>--}}
+    {{--                    </form>--}}
+    {{--                </div>--}}
 
-{{--                <div class="col-lg-7 mt-2">--}}
-{{--                    <div class="info" id="ucapan">--}}
-{{--                        <div class="card example-1 scrollbar">--}}
-{{--                            <div class="box" data-aos="zoom-in" data-aos-delay="100">--}}
-{{--                                @foreach($ucapan as $ucp)--}}
-{{--                                    <h5 id="section1"><strong>{{ ucfirst($ucp->nama) }}</strong></h5>--}}
-{{--                                    <p style="color: #171a1d">{{ $ucp->ucapan }}</p><br>--}}
-{{--                                @endforeach--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+    {{--                <div class="col-lg-7 mt-2">--}}
+    {{--                    <div class="info" id="ucapan">--}}
+    {{--                        <div class="card example-1 scrollbar">--}}
+    {{--                            <div class="box" data-aos="zoom-in" data-aos-delay="100">--}}
+    {{--                                @foreach($ucapan as $ucp)--}}
+    {{--                                    <h5 id="section1"><strong>{{ ucfirst($ucp->nama) }}</strong></h5>--}}
+    {{--                                    <p style="color: #171a1d">{{ $ucp->ucapan }}</p><br>--}}
+    {{--                                @endforeach--}}
+    {{--                            </div>--}}
+    {{--                        </div>--}}
+    {{--                    </div>--}}
+    {{--                </div>--}}
 
 
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section><!-- End Contact Section -->--}}
+    {{--            </div>--}}
+    {{--        </div>--}}
+    {{--    </section><!-- End Contact Section -->--}}
 
 
 
@@ -394,7 +394,7 @@
                             <input type="hidden" name="nama" class="form-control" id="name" value="{{ $param }}">
                             <label for="message">Message</label> <textarea name="ucapan" id="" msg cols="30" rows="5" class="form-control formucapan" style="background-color: transparent; border: 1px solid #999999" required></textarea>
                         </div>
-                        <div class="g-recaptcha mt-2" data-sitekey="6LeB_-4bAAAAAAlRWbQYVYpWe3pmCZFy-vI-mJJ7"></div>
+                        <div class="g-recaptcha mt-2" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div>
                         <div class="form-group"> <button type="submit" id="post" class="btn">Post Comment</button> </div>
                     </form>
                 </div>

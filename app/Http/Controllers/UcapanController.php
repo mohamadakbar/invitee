@@ -58,7 +58,7 @@ class UcapanController extends Controller
             $client     = new Client();
             $response   = $client->post('https://www.google.com/recaptcha/api/siteverify', [
                 'form_params' => [
-                    'secret' => '6LeB_-4bAAAAAKeWNhO12Vb-rYF67jG9fXQtHff0',
+                    'secret' => env('NOCAPTCHA_SECRET'),
                     'response' => $token
                 ]
             ]);

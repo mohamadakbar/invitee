@@ -12,7 +12,7 @@
 */
 
  Route::get('/', function () {
-     return view('welcome');
+     return view('web.main');
  });
 
 //Route::get('/', 'HomeController@index');
@@ -20,13 +20,22 @@
 Auth::routes();
 
 Route::get('/dashboard', 'MainController@index')->name('home');
-Route::get('/form', 'FormController@index')->name('form');
-Route::get('/create/', 'FormController@create')->name('form.create');
-Route::get('/edit/{id}', 'FormController@edit')->name('form.edit');
-Route::post('/update/{id}', 'FormController@update')->name('form.update');
-Route::post('/store', 'FormController@store')->name('form.store');
 
+// FORM
+Route::get('/form', 'FormController@index')->name('form');
+Route::get('/form/create/', 'FormController@create')->name('form.create');
+Route::get('/form/edit/{slug}', 'FormController@edit')->name('form.edit');
+Route::post('/form/update/{slug}', 'FormController@update')->name('form.update');
+Route::post('/form/store', 'FormController@store')->name('form.store');
+
+//UCAPAN
 //Route::get('/ucapan', 'UcapanController@index')->name('ucapan.index');
 Route::post('/storeucapan', 'UcapanController@store')->name('ucapan.store');
 
+//TEMPLATE
 Route::get('/u/{nama}', 'TemplateController@index')->name('undangan');
+
+// USERS
+Route::get('users', 'UserController@index')->name('users');
+Route::get('users/{slug}/edit', 'UserController@edit');
+Route::post('users/{slug}', 'UserController@update')->name('users.update');

@@ -16,7 +16,8 @@ class CreateFormsTable extends Migration
         Schema::create('form', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('id_user');
-            $table->integer('template_id');
+            $table->string('template_id', 50)->unique();
+            $table->integer('slug');
             $table->string('nama_panggilan_p', 50);
             $table->string('nama_panggilan_w', 50);
             $table->string('nama_lengkap_p', 100);
@@ -31,6 +32,17 @@ class CreateFormsTable extends Migration
             $table->string('selesai_res');
             $table->string('tempat_akad', 50);
             $table->string('tempat_res', 50);
+            $table->string('alamat_akad', 50);
+            $table->string('alamat_res', 50);
+            $table->string('nama_ortu_p_p', 50);
+            $table->string('nama_ortu_p_w', 50);
+            $table->string('nama_ortu_w_p', 50);
+            $table->string('nama_ortu_w_w', 50);
+            $table->text('link_loc');
+            $table->string('status_und', 50);
+            $table->string('foto_sampul', 50);
+            $table->string('foto_p', 50);
+            $table->string('foto_w', 50);
             $table->integer('is_create');
             $table->timestamps();
         });

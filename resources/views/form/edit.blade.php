@@ -20,7 +20,7 @@
 <div class="">
     <div class="clearfix"></div>
 
-    <form id="upload_form" data-parsley-validate class="form-horizontal form-label-left" action="{{ route('form.update', $form->id_user) }}" method="POST" enctype="multipart/form-data">
+    <form id="upload_form" data-parsley-validate class="form-horizontal form-label-left" action="{{ route('form.update', ['slug' => $form->slug]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @include('form.form')
     </form>

@@ -12,4 +12,5 @@ npm-debug.log
 yarn-error.log
 /public/backend/gallery_img
 /public/backend/upload_img
-/public/template/img
+/public/frontend/template
+/public/frontend/web/img

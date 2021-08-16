@@ -42,8 +42,8 @@ class FormController extends Controller
             'nama_lengkap_w'    => 'required',
 //            'foto_pria'         => 'required',
 //            'foto_wanita'       => 'required',
+//            'foto_sampul'       => 'required',
             'template_id'       => 'required',
-            'foto_sampul'       => 'required',
             'tentang_p'         => 'required',
             'tentang_w'         => 'required',
             'tgl_akad'          => 'required',
@@ -60,7 +60,7 @@ class FormController extends Controller
             'nama_ortu_p_w'     => 'required',
             'nama_ortu_w_p'     => 'required',
             'nama_ortu_w_w'     => 'required',
-            'link_loc'      => 'required',
+            'link_loc'          => 'required',
             'status_und'        => 'required',
         ]);
 
@@ -68,6 +68,9 @@ class FormController extends Controller
         $foto_gallery   = $request->file('foto_gallery');
         $foto_p         = $request->file('foto_p');
         $foto_w         = $request->file('foto_w');
+        $explode_p      = explode(' ', $request->nama_panggilan_p);
+        $explode_w      = explode(' ', $request->nama_panggilan_w);
+        $slug           = $explode_p[0].'-'.$explode_w[0];
         $tujuan_upload  = 'upload_img';
         $tujuan_gallery = 'gallery_img';
 
@@ -114,6 +117,7 @@ class FormController extends Controller
         }
 
         $form->id_user           = $request->id_user;
+        $form->slug              = strtolower($slug);
         $form->template_id       = $request->template_id;
         $form->nama_panggilan_p  = $request->nama_panggilan_p;
         $form->nama_panggilan_w  = $request->nama_panggilan_w;
@@ -131,8 +135,6 @@ class FormController extends Controller
         $form->tempat_res        = $request->tempat_res;
         $form->alamat_akad       = $request->alamat_akad;
         $form->alamat_res        = $request->alamat_res;
-        $form->foto_sampul       = $nama_file;
-        $form->foto_sampul       = $nama_file;
         $form->is_create         = 1;
         $form->status_und        = $request->status_und;
         $form->nama_ortu_p_p     = $request->nama_ortu_p_p;
@@ -154,31 +156,32 @@ class FormController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit($slug)
     {
-        $form = Form::where('id_user', $id)->first();
+        $form = Form::where('slug', $slug)->first();
         $temp = Template::all();
-        if ($form->id_user != Auth::user()->id){
+        if (!$form){
             return redirect('dashboard')->with(['error' => 'Not permitted']);
         }elseif($form->is_create == 0){
             return redirect('create')->with(['error' => 'Kamu belum bikin undangan, bikin dulu yok']);
         }else{
             return view('form.edit', ['tmp' => $temp, 'form' => $form]);
         }
+//            return view('form.edit', ['tmp' => $temp, 'form' => $form]);
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
         $request->validate([
             'nama_panggilan_p'  => 'required',
             'nama_panggilan_w'  => 'required',
             'nama_lengkap_p'    => 'required',
             'nama_lengkap_w'    => 'required',
-            'foto_pria'         => 'required',
-            'foto_wanita'       => 'required',
+//            'foto_pria'         => 'required',
+//            'foto_wanita'       => 'required',
             'template_id'       => 'required',
-            'foto_sampul'       => 'required',
+//            'foto_sampul'       => 'required',
             'tentang_p'         => 'required',
             'tentang_w'         => 'required',
             'tgl_akad'          => 'required',
@@ -206,7 +209,7 @@ class FormController extends Controller
         $tujuan_upload  = 'upload_img';
         $tujuan_gallery = 'gallery_img';
 
-        $form           = Form::where('id_user', $id)->first();
+        $form           = Form::where('slug', $slug)->first();
 
         if ( $request->hasfile('foto_sampul') ) {
             $foto_sampul->move($tujuan_upload, $foto_sampul->getClientOriginalName());

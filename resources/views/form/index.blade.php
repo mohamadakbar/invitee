@@ -120,7 +120,7 @@
 
                                 <div class="col-md-12 right">
                                     <a href="{{ route('undangan', $form->nama_panggilan_p.'&'.$form->nama_panggilan_w) }}" class="btn btn-primary btn-sm" target="_blank">Preview</a>
-                                    <a href="{{ url('edit').'/'.Auth::user()->id }}" class="btn btn-success btn-sm">Ubah</a>
+                                    <a href="{{ route('form.edit', $form->slug) }}" class="btn btn-success btn-sm">Edit</a>
                                 </div>
                             </div>
                         </div>

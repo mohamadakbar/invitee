@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('/template/')}}/img/favicon.png" rel="icon">
-    <link href="{{ asset('/template/')}}/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="{{ asset('/frontend/template/')}}/img/favicon.png" rel="icon">
+    <link href="{{ asset('/frontend/template/')}}/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,22 +19,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
     <!-- Vendor CSS Files -->
-    <link href="{{ asset('/template/')}}/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="{{ asset('/template/')}}/vendor/aos/aos.css" rel="stylesheet">
-    <link href="{{ asset('/template/')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('/template/')}}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="{{ asset('/template/')}}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="{{ asset('/template/')}}/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="{{ asset('/template/')}}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/vendor/aos/aos.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Template Main CSS File -->
-    <link href="{{ asset('/template/')}}/css/style.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/css/style.css" rel="stylesheet">
     <style>
         .modal-content {
             background-size: 50%;
             height: 400px;
-            background-image: url({{ asset('template/img/border-corner2.png') }}), url({{ asset('template/img/border-corner-bottom.png') }});
+            background-image: url({{ asset('/frontend/template/img/border-corner2.png') }}), url({{ asset('/frontend/template/img/border-corner-bottom.png') }});
             background-position: top right, bottom left;
             background-repeat: no-repeat, no-repeat;
             background-size: 20%, 20%;
@@ -89,7 +89,7 @@
         <div class="modal-content">
             <div class="container" data-aos="fade-up">
                 <div class="d-flex justify-content-center m-1">
-                    <img src="{{ asset('template/img/cover-dpn.jpg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
+                    <img src="{{ asset('/frontend/template/img/cover-dpn.jpg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
                 </div>
                 <div class="d-flex justify-content-center m-1">
                     Kepada Yth:
@@ -189,7 +189,7 @@
 
 
 
-    <section id="menu" class="events" style="background:url('{{ asset('template/') }}/img/cover2.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
+    <section id="menu" class="events" style="background:url('{{ asset('/frontend/template/') }}/img/cover2.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
         <div class="container" data-aos="fade-up">
             <div class="section-title d-flex justify-content-center mb-3">
                 <h1>Kami yang berbahagia</h1>
@@ -207,7 +207,7 @@
 
                     <div class="col-lg-2 centered">
                         <div class="row center-margin">
-                            <img src="{{ asset('/template/')}}/img/and_sc copy.png" class="img-fluid" alt="">
+                            <img src="{{ asset('/frontend/template/')}}/img/and_sc copy.png" class="img-fluid" alt="">
                         </div>
                     </div>
 
@@ -228,7 +228,7 @@
 
 
     <!-- ======= Why Us Section ======= -->
-    <section id="about" class="why-us" style="background-image: url({{ asset('template/img/border.png') }}); background-position: top; background-repeat: no-repeat; background-size: auto;">
+    <section id="about" class="why-us" style="background-image: url({{ asset('/frontend/template/img/border.png') }}); background-position: top; background-repeat: no-repeat; background-size: auto;">
         <br><br><br><br><br>
         <div class="container" data-aos="fade-up">
 
@@ -249,7 +249,7 @@
 
                 <div class="col-lg-6">
                     <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="{{ asset('/template/')}}/img/ring.png" class="img-fluid" alt="" style="float: left;border-radius: 20px; height: 15%;width: 15%;"><span>  AKAD NIKAH</span>
+                        <img src="{{ asset('/frontend/template/')}}/img/ring.png" class="img-fluid" alt="" style="float: left;border-radius: 20px; height: 15%;width: 15%;"><span>  AKAD NIKAH</span>
                         <h6 style="color: #666666"><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_akad)->format('l, j F Y') }}</h6>
                         <p><i class="fa fa-clock-o"></i>  {{ $form->mulai_akad }} WIB - {{ $form->selesai_akad }} WIB</p>
                         <p><i class="fa fa-map-marker"></i>  {{ ucfirst($form->tempat_akad) }} {{ ucfirst($form->alamat_akad) }}</p>
@@ -258,7 +258,7 @@
 
                 <div class="col-lg-6 mt-2 mt-lg-0">
                     <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="{{ asset('/template/')}}/img/res.png" class="img-fluid" alt="" style="float: left;border-radius: 15px; height: 15%;width: 15%;"><span>RESEPSI</span>
+                        <img src="{{ asset('/frontend/template/')}}/img/res.png" class="img-fluid" alt="" style="float: left;border-radius: 15px; height: 15%;width: 15%;"><span>RESEPSI</span>
                         <h6 style="color: #666666"><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_res)->format('l, j F Y') }}</h5>
                             <p><i class="fa fa-clock-o"></i>  {{ $form->mulai_res }} WIB - {{ $form->selesai_res }}</p>
                             <p><i class="fa fa-map-marker"></i>  {{ $form->tempat_res }} {{ $form->alamat_res }}</p>
@@ -299,7 +299,7 @@
     <section id="gallery" class="gallery">
 
         <div class="container" data-aos="fade-up">
-            <div class="section-title">
+            <div class="section-title text-center">
                 {{--                <h2>Gallery</h2>--}}
                 <h1>Gallery</h1>
             </div>
@@ -311,7 +311,7 @@
 
                 @foreach($gallery as $gal)
                     {{--                    {{ $gal }}--}}
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-4 col-md-6 mb-3">
                         <div class="gallery-item">
                             <a href="{{ asset('gallery_img')}}/{{ $gal->foto_gallery }}" class="gallery-lightbox"
                                data-gall="gallery-item">
@@ -386,7 +386,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-5">
+                <div class="col-md-5 text-center">
                     <h1>Ucapan dan Doa</h1>
                     <form id="algin-form" action="" method="POST" role="form" class="php-email-form btn-submits mt-4">
                         @csrf
@@ -422,9 +422,32 @@
         </div>
     </section>
 
+    <section id="protocol" class="why-us">
+
+        <div class="container" data-aos="fade-up">
+            <div class="section-title text-center">
+                {{--                <h2>Gallery</h2>--}}
+                <h1>Himbauan</h1>
+            </div>
+        </div>
+
+        <div class="container-fluid col-lg-8 col-md-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <p class="text-warning" style="font-size: 20px; font-family: 'Amaranth', sans-serif">Dalam rangka mencegah penularan Covid-19, dimohon untuk dapat melaksanakan protokol kesehatan. Dengan tetap menggunakan masker, menjaga jarak dan mencuci tangan.</p>
+                        <img src="{{ asset('/frontend/template/img/protocol.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Gallery Section -->
+
+
     <div id="preloader"></div>
     <audio id="audio">
-        <source src="{{ asset('template') }}/audio/audio.mpeg" type="audio/mpeg">
+        <source src="{{ asset('/frontend/template') }}/audio/audio.mpeg" type="audio/mpeg">
     </audio>
     <a class="back-to-top d-flex align-items-center justify-content-center" id="playPauseBTN" onclick="playPause()"><i class="bi bi-music-note"></i></a>
 
@@ -434,15 +457,15 @@
     <!-- Vendor JS Files -->
 
 </body>
-<script src="{{ asset('/template/')}}/vendor/aos/aos.js"></script>
-<script src="{{ asset('/template/')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="{{ asset('/template/')}}/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="{{ asset('/template/')}}/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="{{ asset('/frontend/template/')}}/vendor/aos/aos.js"></script>
+<script src="{{ asset('/frontend/template/')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('/frontend/template/')}}/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="{{ asset('/frontend/template/')}}/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 {{--<script src="{{ asset('/template/')}}/vendor/php-email-form/validate.js"></script>--}}
-<script src="{{ asset('/template/')}}/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="{{ asset('/frontend/template/')}}/vendor/swiper/swiper-bundle.min.js"></script>
 
 <!-- Template Main JS File -->
-<script src="{{ asset('/template/')}}/js/main.js"></script>
+<script src="{{ asset('/frontend/template/')}}/js/main.js"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 {{--<script>--}}
 {{--    window.onload = function() {--}}

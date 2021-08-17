@@ -1546,8 +1546,8 @@ section {
 --------------------------------------------------------------*/
 .gallery .gallery-item {
     overflow: hidden;
-    border-right: 3px solid #454035;
-    border-bottom: 3px solid #454035;
+    /*border-right: 3px solid #454035;*/
+    /*border-bottom: 3px solid #454035;*/
 }
 
 .gallery .gallery-item img {
@@ -2276,7 +2276,7 @@ section {
         background-image: url("../img/border-corner2.png"), url("../img/border-corner-bottom.png");
         background-position: top right, bottom left;
         background-repeat: no-repeat, no-repeat;
-        background-size: 60%, 60%;
+        background-size: 50%, 50%;
     }
 
     .komentar {
@@ -2285,6 +2285,11 @@ section {
 
     .back-to-top {
         margin-bottom: 10%;
+    }
+
+    #protocol img {
+        /*height: 60px;*/
+        width: 100%;
     }
 
 }
@@ -2438,4 +2443,9 @@ div.fullscreen {
 
 .alert{
     display: none;
+}
+
+#protocol img {
+    /*height: 60px;*/
+    width: 80%;
 }

@@ -247,7 +247,11 @@
                     <select id="waktu_akad"  name="mulai_akad" class="form-control @error('mulai_akad')is-invalid @enderror">
                         @for($i=1;$i<=23;$i++)
                             @php
-                                $i = '0'.$i.'.00';
+                                if ($i < 10){
+                                    $i = '0'.$i.'.00';
+                                }else{
+                                    $i = $i.'.00';
+                                }
                             @endphp
                             <option  @if(isset($form)) value="{{ $i }}" @endif  @if(isset($form)) @if($i == $form->mulai_akad) {{ 'selected' }}@endif @endif>{{ $i }}</option>
                         @endfor
@@ -263,7 +267,11 @@
                     <select id="waktu_akad"  name="selesai_akad" class="form-control @error('selesai_akad')is-invalid @enderror">
                         @for($i=1;$i<=23;$i++)
                             @php
-                                $i = '0'.$i.'.00';
+                                if ($i < 10){
+                                    $i = '0'.$i.'.00';
+                                }else{
+                                    $i = $i.'.00';
+                                }
                             @endphp
                             <option  @if(isset($form))value="{{ $i }}" @endif @if(isset($form)) @if($i == $form->selesai_akad) {{ 'selected' }}@endif @endif>{{ $i }}</option>
                         @endfor
@@ -290,7 +298,7 @@
                 <div class="col-md-12">
                     <div class="form-group row">
                         <label>Alamat</label>
-                        <textarea class="resizable_textarea form-control @error('alamat_akad')is-invalid @enderror" name="alamat_akad"> @if(isset($form)){{ $form->alamat_akad }} @else {{ old('alamat_akad') }} @endif</textarea>
+                        <textarea class="resizable_textarea form-control @error('alamat_akad')is-invalid @enderror" name="alamat_akad">@if(isset($form)){{ $form->alamat_akad }} @else{{ old('alamat_akad') }}@endif</textarea>
                         @error('alamat_akad')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -330,7 +338,11 @@
                     <select id="mulai_res"  name="mulai_res" class="form-control @error('mulai_res')is-invalid @enderror">
                         @for($i=1;$i<=23;$i++)
                             @php
-                                $i = '0'.$i.'.00';
+                                if ($i < 10){
+                                    $i = '0'.$i.'.00';
+                                }else{
+                                    $i = $i.'.00';
+                                }
                             @endphp
                             <option @if(isset($form)) value="{{ $i }}" @endif @if(isset($form)) @if($i == $form->mulai_res) {{ 'selected' }}@endif @endif>{{ $i }}</option>
                         @endfor
@@ -346,7 +358,11 @@
                     <select id="selesai_res"  name="selesai_res" class="form-control @error('selesai_res')is-invalid @enderror" >
                         @for($i=1;$i<=23;$i++)
                             @php
-                                $i = '0'.$i.'.00';
+                                if ($i < 10){
+                                    $i = '0'.$i.'.00';
+                                }else{
+                                    $i = $i.'.00';
+                                }
                             @endphp
                             <option @if(isset($form)) value="{{ $i }}" @endif @if(isset($form)) @if($i == $form->selesai_res) {{ 'selected' }}@endif @endif>{{ $i }}</option>
                         @endfor
@@ -373,7 +389,7 @@
                 <div class="col-md-12">
                     <div class="form-group row">
                         <label>Alamat</label>
-                        <textarea class="resizable_textarea form-control @error('alamat_res')is-invalid @enderror" name="alamat_res"> @if(isset($form)){{ $form->alamat_res }} @else {{ old('alamat_res') }} @endif</textarea>
+                        <textarea class="resizable_textarea form-control @error('alamat_res')is-invalid @enderror" name="alamat_res">@if(isset($form)){{ $form->alamat_res }}@else{{ old('alamat_res') }}@endif</textarea>
                         @error('alamat_res')
                         <div class="invalid-feedback">
                             {{ $message }}

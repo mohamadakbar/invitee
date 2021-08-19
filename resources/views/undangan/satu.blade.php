@@ -44,6 +44,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
+            document.addEventListener('contextmenu', event => event.preventDefault());
             $("#exampleModalCenter").modal({backdrop: 'static', keyboard: false});
             $("#exampleModalCenter").modal('show');
             $(".btn-cls").click(function () {
@@ -60,6 +61,7 @@
     ======================================================== -->
 </head>
 
+{{--<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">--}}
 <body>
 @php
     if( request()->query('kepada') != "" ){
@@ -240,7 +242,7 @@
             <div class="d-flex justify-content-center" style="font-size: 30px; color: #666666">
                 بسم الله الرحمن الرحيم
             </div>
-            <div class="d-flex justify-content-center" style="font-family: Courgette; font-size: 18px; color: #666666">
+            <div class="d-flex justify-content-center text-center" style="font-family: Courgette; font-size: 18px; color: #666666">
                 Dengan memohon rahmat dan ridho Allah SWT, kami mengundang bapak/ibu/saudara/i untuk menghadiri resepsi pernikahan kami:
             </div>
             <br>
@@ -276,6 +278,24 @@
             {{--            <br><br>--}}
         </div>
     </section><!-- End Why Us Section -->
+
+    <div class="container1">
+        <h1 id="headline">Menghitung hari:</h1>
+        <div id="countdown">
+            <ul>
+                <li><span id="days"></span>Hari</li>
+                <li><span id="hours"></span>Jam</li>
+                <li><span id="minutes"></span>Menit</li>
+                <li><span id="seconds"></span>Detik</li>
+            </ul>
+        </div>
+        <div id="content" class="emoji">
+            <li><span id="days">-</span>Hari</li>
+            <li><span id="hours">-</span>Jam</li>
+            <li><span id="minutes">-</span>Menit</li>
+            <li><span id="seconds">-</span>Detik</li>
+        </div>
+    </div>
 
     <section id="events" class="why-us">
         <div class="container" data-aos="fade-up">
@@ -409,7 +429,7 @@
                     </form>
                 </div>
 
-                <div class="col-sm-7 mb-5 komentar">
+                <div class="col-sm-7 mb-5 komentar text-center">
                     <h1>Comments</h1>
                     <div class="scrollbar" id="ucapan">
                         @foreach($ucapan as $ucp)
@@ -504,6 +524,41 @@
 {{--        document.getElementById("audio").play();--}}
 {{--    }--}}
 {{--</script>--}}
+<script>
+    (function () {
+        const second = 1000,
+            minute = second * 60,
+            hour = minute * 60,
+            day = hour * 24;
+
+        let birthday = "Sep 05, 2021 08:00:00",
+            countDown = new Date(birthday).getTime(),
+            x = setInterval(function() {
+
+                let now = new Date().getTime(),
+                    distance = countDown - now;
+
+                document.getElementById("days").innerText = Math.floor(distance / (day)),
+                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                //do something later when date is reached
+                if (distance < 0) {
+                    let headline = document.getElementById("headline"),
+                        countdown = document.getElementById("countdown"),
+                        content = document.getElementById("content");
+
+                    headline.innerText = "Menghitung hari:";
+                    countdown.style.display = "none";
+                    content.style.display = "block";
+
+                    clearInterval(x);
+                }
+                //seconds
+            }, 0)
+    }());
+</script>
 <script>
     var audio           = document.getElementById('audio');
     var playPauseBTN    = document.getElementById('playPauseBTN');

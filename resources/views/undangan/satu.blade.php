@@ -91,11 +91,11 @@
                 <div class="d-flex justify-content-center m-1">
                     <img src="{{ asset('/frontend/template/img/cover-dpn.jpg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
                 </div>
-                <div class="d-flex justify-content-center m-1">
+                <div class="d-flex justify-content-center m-1" style="font-family: Courgette">
                     Kepada Yth:
                 </div>
 
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center" style="font-family: Courgette">
                     Bpk/Ibu/Saudara/i
                 </div><br>
 
@@ -107,7 +107,7 @@
                     @endif
                 </div>
 
-                <div class="section-title d-flex justify-content-center mt-4">
+                <div class="section-title d-flex justify-content-center mt-auto" style="font-family: Courgette">
                     <button type="button" class="btn btn-success btn-md btn-rounded btn-cls" id="playPauseBTN" onclick="playPause()" data-dismiss="modal">Buka Undangan</button>
                 </div>
 
@@ -178,8 +178,7 @@
                     {{--                        <a href="#about" class="btn-menu animated fadeInUp scrollto">Lihat Undangan</a>--}}
                     {{--                    </div>--}}
                 </div>
-                <div class="col-lg-4 mt-2 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in"
-                     data-aos-delay="200">
+                <div class="col-lg-4 mt-2 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
                     <h3> "" Ya Allah, dengan segala kesucian hati, kami bersujud memohon ridho-Mu, untuk menuju sunnah rasul-Mu membentuk keluarga yang sakinah, mawadah dan warohmah ""</h3>
                 </div>
 
@@ -238,10 +237,10 @@
                 <!-- <h1 style="font-family:'UVF Aphrodite Pro';font-weight:normal;font-size:42px">AaBbCcDdEeFfGgHhŞşIıİi Example</h1> -->
             </div>
 
-            <div class="d-flex justify-content-center" style="font-size: 30px">
+            <div class="d-flex justify-content-center" style="font-size: 30px; color: #666666">
                 بسم الله الرحمن الرحيم
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center" style="font-family: Courgette; font-size: 18px; color: #666666">
                 Dengan memohon rahmat dan ridho Allah SWT, kami mengundang bapak/ibu/saudara/i untuk menghadiri resepsi pernikahan kami:
             </div>
             <br>
@@ -249,19 +248,23 @@
 
                 <div class="col-lg-6">
                     <div class="box" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="{{ asset('/frontend/template/')}}/img/ring.png" class="img-fluid" alt="" style="float: left;border-radius: 20px; height: 15%;width: 15%;"><span>  AKAD NIKAH</span>
-                        <h6 style="color: #666666"><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_akad)->format('l, j F Y') }}</h6>
-                        <p><i class="fa fa-clock-o"></i>  {{ $form->mulai_akad }} WIB - {{ $form->selesai_akad }} WIB</p>
-                        <p><i class="fa fa-map-marker"></i>  {{ ucfirst($form->tempat_akad) }} {{ ucfirst($form->alamat_akad) }}</p>
+                        <img src="{{ asset('/frontend/template/')}}/img/ring.png" class="img-fluid" alt="" style="float: left;border-radius: 20px; width: 7%;"><span>  AKAD NIKAH</span>
+                        <div class="text-body" style="margin-left: 10px;">
+                            <h6 style="color: #666666;margin-bottom: 0 !important;font-family: Courgette""><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_akad)->format('l, j F Y') }}</h6>
+                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-clock-o"></i>  {{ $form->mulai_akad }} WIB - {{ $form->selesai_akad }} WIB</p>
+                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-map-marker"></i>  {{ ucfirst($form->tempat_akad) }} {{ ucfirst($form->alamat_akad) }}</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 mt-2 mt-lg-0">
                     <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="{{ asset('/frontend/template/')}}/img/res.png" class="img-fluid" alt="" style="float: left;border-radius: 15px; height: 15%;width: 15%;"><span>RESEPSI</span>
-                        <h6 style="color: #666666"><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_res)->format('l, j F Y') }}</h5>
-                            <p><i class="fa fa-clock-o"></i>  {{ $form->mulai_res }} WIB - {{ $form->selesai_res }}</p>
-                            <p><i class="fa fa-map-marker"></i>  {{ $form->tempat_res }} {{ $form->alamat_res }}</p>
+                        <img src="{{ asset('/frontend/template/')}}/img/res.png" class="img-fluid" alt="" style="float: left;border-radius: 15px; width: 7%;"><span>RESEPSI</span>
+                        <div class="text-body" style="margin-left: 10px;">
+                            <h6 style="color: #666666;margin-bottom: 0 !important;font-family: Courgette""><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_res)->format('l, j F Y') }}</h6>
+                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-clock-o"></i>  {{ $form->mulai_res }} WIB - {{ $form->selesai_res }}</p>
+                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-map-marker"></i>  {{ $form->tempat_res }} {{ $form->alamat_res }}</p>
+                        </div>
                     </div>
                 </div>
 
@@ -279,15 +282,22 @@
 
             <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <!-- <h2>Contact</h2>
-                    <p>Contact Us</p> -->
+                <div class="section-title text-center">
+                     <h1>Location</h1>
+                    <!--<p>Contact Us</p> -->
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-12">
-                    <iframe style="border:0; width: 100%; height: 350px;" src="{{ $form->link_loc }}"></iframe>
+{{--                    <iframe style="border:0; width: 100%; height: 350px;" src="{{ $form->link_loc }}"></iframe>--}}
+{{--                    <div id="maps" style="border:0; width: 100%; height: 350px;">--}}
+                        {!! $form->link_loc !!}
+{{--                    </div>--}}
+                    <div class="form-group text-center mt-2">
+                        <a href="https://goo.gl/maps/zVyWrK2t9VrFvTbc8" target="_blank" style="background: #cda45e;border: 0;padding: 10px 35px;color: #fff;transition: 0.4s;border-radius: 50px; font-size: 17px" class="btn-sm mt-3">Lihat lokasi</a>
+                    </div>
+{{--                    <a href="https://goo.gl/maps/zVyWrK2t9VrFvTbc8"> link</a>--}}
                 </div>
             </div>
 
@@ -395,7 +405,7 @@
                             <label for="message">Message</label> <textarea name="ucapan" id="" msg cols="30" rows="5" class="form-control formucapan" style="background-color: transparent; border: 1px solid #999999" required></textarea>
                         </div>
                         <div class="g-recaptcha mt-2" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div>
-                        <div class="form-group"> <button type="submit" id="post" class="btn">Post Comment</button> </div>
+                        <div class="form-group"> <button type="submit" class="btn btn-primary btn-sm mt-3">Post Comment</button> </div>
                     </form>
                 </div>
 
@@ -436,18 +446,40 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
-                        <p class="text-warning" style="font-size: 20px; font-family: 'Amaranth', sans-serif">Dalam rangka mencegah penularan Covid-19, dimohon untuk dapat melaksanakan protokol kesehatan. Dengan tetap menggunakan masker, menjaga jarak dan mencuci tangan.</p>
+                        <p style="font-size: 25px; font-family: 'Patrick Hand', cursive; color: #cda45e">Dalam rangka mencegah penularan <strong>Covid-19</strong>, dimohon untuk dapat melaksanakan protokol kesehatan. Dengan tetap menggunakan masker, menjaga jarak dan mencuci tangan.</p>
                         <img src="{{ asset('/frontend/template/img/protocol.png') }}" alt="">
                     </div>
                 </div>
             </div>
         </div>
-    </section><!-- End Gallery Section -->
+    </section>
+
+    <section id="end" class="end">
+
+{{--        <div class="container" data-aos="fade-up">--}}
+{{--            <div class="section-title text-center">--}}
+{{--                --}}{{--                <h2>Gallery</h2>--}}
+{{--                <h1>Himbauan</h1>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
+        <div class="container-fluid col-lg-8 col-md-6" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <p style="font-size: 25px">Terima kasih</p>
+                        {{ ucfirst($form->nama_panggilan_p) }} & {{ ucfirst($form->nama_panggilan_w) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <div id="preloader"></div>
     <audio id="audio">
-        <source src="{{ asset('/frontend/template') }}/audio/audio.mpeg" type="audio/mpeg">
+        <source src="{{ asset('/frontend/template') }}/audio/audio.eg" type="audio/mpeg">
     </audio>
     <a class="back-to-top d-flex align-items-center justify-content-center" id="playPauseBTN" onclick="playPause()"><i class="bi bi-music-note"></i></a>
 

@@ -119,6 +119,8 @@
 {{--                            </li>--}}
                         </ul>
                     </div>
+{{--                    {{ dd( }}--}}
+                    @if(\Illuminate\Support\Facades\Auth::user()->roles == 1)
                     <div class="menu_section">
                         <h3>Admin Panel</h3>
                         <ul class="nav side-menu">
@@ -163,6 +165,7 @@
                             <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                         </ul>
                     </div>
+                    @endif
 
                 </div>
                 <!-- /sidebar menu -->

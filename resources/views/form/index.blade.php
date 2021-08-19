@@ -107,14 +107,14 @@
                                 <div class="col-md-12">
                                     <p class="font-gray-dark">
                                         <b>Dibuat</b><br>
-                                        {{ $tmp->created_at }}
+                                        @if($form->created_at == '')-@else{{ $form->created_at }}@endif
                                     </p>
                                 </div>
 
                                 <div class="col-md-12">
                                     <p class="font-gray-dark">
                                         <b>Di ubah</b><br>
-                                        @if($tmp->updated_at == '')-@else{{ $tmp->updated_at }}@endif
+                                        @if($form->updated_at == '')-@else{{ $form->updated_at }}@endif
                                     </p>
                                 </div>
 

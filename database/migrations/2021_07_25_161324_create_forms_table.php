@@ -16,8 +16,8 @@ class CreateFormsTable extends Migration
         Schema::create('form', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('id_user');
-            $table->string('template_id', 50)->unique();
-            $table->integer('slug');
+            $table->string('template_id', 50);
+            $table->string('slug')->unique();
             $table->string('nama_panggilan_p', 50);
             $table->string('nama_panggilan_w', 50);
             $table->string('nama_lengkap_p', 100);

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Model\Gallery;
+use App\Model\Paket;
 use App\Model\Template;
 use App\Model\Form;
 use App\Model\Ucapan;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,16 +28,27 @@ class TemplateController extends Controller
                 ->where('nama_panggilan_p', $pria)
                 ->where('nama_panggilan_w', $wanita)
                 ->first();
-//        dd($form->id);
+        $user = User::where('id', $form->id_user)->get();
+        foreach ($user as $us){
+            $menu = Paket::select("*")->with('menu')->where('id', $us->id_paket)->first();
+        }
+
+        $menu_temp = array();
+        foreach ($menu->menu as $menus){
+//            print_r();
+            $menu_temp[] = $menus;
+        }
+//        print_r($menu_temp);
+//        dd("op");
+//        $expld_menu = explode(';', $menus->nama_menu);
         $ucapan = Ucapan::all();
+
         $gallery = Gallery::where('form_id', $form->id)->get();
         if ($form->is_create == 0 ){
             return redirect('form')->with(['error' => 'Kamu belum buat undangan, buat dulu yuk ..']);
-        }else{
-
         }
         $temp = Template::find($form->template_id);
-        return view($temp->slug, ['form' => $form, 'temp' => $temp, 'ucapan' => $ucapan, 'gallery' => $gallery]);
+        return view($temp->slug, ['form' => $form, 'temp' => $temp, 'ucapan' => $ucapan, 'gallery' => $gallery, 'menu' => $menu_temp]);
     }
 
     /**

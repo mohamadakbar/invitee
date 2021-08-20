@@ -44,7 +44,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
-            document.addEventListener('contextmenu', event => event.preventDefault());
+            // document.addEventListener('contextmenu', event => event.preventDefault()); // disable klik kanan
             $("#exampleModalCenter").modal({backdrop: 'static', keyboard: false});
             $("#exampleModalCenter").modal('show');
             $(".btn-cls").click(function () {
@@ -126,41 +126,43 @@
             </a>
         </h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-    <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="{{ asset('/template/')}}/img/logo.png" alt="" class="img-fluid"></a>-->
+
         <nav class="mobile-bottom-nav">
-            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-                <div class="mobile-bottom-nav__item-content">
-                    <a href="#hero"><i class="fa fa-home fa-2x" style="color: #fff"></i><br>Home</a>
+            @foreach($menu as $menus)
+                <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                    <div class="mobile-bottom-nav__item-content">
+                        <a href="#{{ $menus->slug }}">{!! $menus->icon !!}<br>{{ $menus->nama_menu }}</a>
+                    </div>
                 </div>
-            </div>
-            <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
-                    <a href="#menu"><i class="fa fa-user fa-2x" style="color: #fff"></i><br>Couple</a>
-                </div>
-            </div>
-            <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
-                    <a href="#about"><i class="fa fa-envelope-open fa-2x" style="color: #fff"></i><br>Events</a>
-                </div>
-            </div>
+            @endforeach
+{{--            <div class="mobile-bottom-nav__item">--}}
+{{--                <div class="mobile-bottom-nav__item-content">--}}
+{{--                    <a href="#menu"><i class="fa fa-user fa-2x" style="color: #fff"></i><br>Couple</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="mobile-bottom-nav__item">--}}
+{{--                <div class="mobile-bottom-nav__item-content">--}}
+{{--                    <a href="#about"><i class="fa fa-envelope-open fa-2x" style="color: #fff"></i><br>Events</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
-                    <a href="#events"><i class="fa fa-map-marker fa-2x" style="color: #fff"></i><br>Location</a>
-                </div>
-            </div>
+{{--            <div class="mobile-bottom-nav__item">--}}
+{{--                <div class="mobile-bottom-nav__item-content">--}}
+{{--                    <a href="#events"><i class="fa fa-map-marker fa-2x" style="color: #fff"></i><br>Location</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
-                    <a href="#gallery"><i class="fa fa-photo fa-2x" style="color: #fff"></i><br>Gallery</a>
-                </div>
-            </div>
+{{--            <div class="mobile-bottom-nav__item">--}}
+{{--                <div class="mobile-bottom-nav__item-content">--}}
+{{--                    <a href="#gallery"><i class="fa fa-photo fa-2x" style="color: #fff"></i><br>Gallery</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div class="mobile-bottom-nav__item">
-                <div class="mobile-bottom-nav__item-content">
-                    <a href="#contact"><i class="fa fa-comment fa-2x" style="color: #fff"></i><br>Comment</a>
-                </div>
-            </div>
+{{--            <div class="mobile-bottom-nav__item">--}}
+{{--                <div class="mobile-bottom-nav__item-content">--}}
+{{--                    <a href="#contact"><i class="fa fa-comment fa-2x" style="color: #fff"></i><br>Comment</a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
         </nav>
         <!-- <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a> -->
@@ -195,7 +197,6 @@
             <div class="section-title d-flex justify-content-center mb-3">
                 <h1>Kami yang berbahagia</h1>
             </div>
-
             <!-- <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100"> -->
             <!-- <div class="swiper-wrapper"> -->
 

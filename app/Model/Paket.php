@@ -13,4 +13,9 @@ class Paket extends Model
     {
         return $this->hasMany('App\Model\User');
     }
+
+    public function menu()
+    {
+        return $this->hasMany('App\Model\MenuTemplate');
+    }
 }

@@ -24,12 +24,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '1d0149d5e0040b46e50c66b42e04cdf0613a0bc4',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -388,6 +388,15 @@ private static $installed = array (
         0 => 'v5.8.38',
       ),
     ),
+    'itsgoingd/clockwork' => 
+    array (
+      'pretty_version' => 'v5.1.0',
+      'version' => '5.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b963dee47429a49c9669981cfa9a8362ce209278',
+    ),
     'jakub-onderka/php-console-color' => 
     array (
       'replaced' => 
@@ -420,12 +429,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '1d0149d5e0040b46e50c66b42e04cdf0613a0bc4',
     ),
     'laravel/tinker' => 
     array (

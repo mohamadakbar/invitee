@@ -26,9 +26,9 @@
                     <label for="paket">Pilih Paket</label>
                     <select name="paket" id="" class="form-control" required>
                         <option value="">Pilih ..</option>
-                        <option value="1">Gratis</option>
+                        <option value="1">Free</option>
                         <option value="2">Entry</option>
-                        <option value="3">Pro</option>
+{{--                        <option value="3" style="cursor: not-allowed;"><del>Pro</del></option>--}}
                     </select>
                     <div class="invalid-feedback">
                         Your email is invalid

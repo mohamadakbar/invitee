@@ -39,3 +39,15 @@ Route::get('/u/{nama}', 'TemplateController@index')->name('undangan');
 Route::get('users', 'UserController@index')->name('users');
 Route::get('users/{slug}/edit', 'UserController@edit');
 Route::post('users/{slug}', 'UserController@update')->name('users.update');
+
+// PAKET
+Route::get('paket', 'PaketController@index')->name('paket');
+//Route::post('paket', 'PaketController@index')->name('paket.delete');
+//Route::get('paket', 'PaketController@index')->name('paket.edit');
+//Route::post('paket', 'PaketController@index')->name('paket.store');
+
+// Menu
+Route::get('menu', 'MenuTemplateController@index')->name('menu');
+//Route::post('menu', 'MenuTemplateController@index')->name('menu.delete');
+//Route::get('menu', 'MenuTemplateController@index')->name('menu.edit');
+//Route::post('menu', 'MenuTemplateController@index')->name('menu.store');

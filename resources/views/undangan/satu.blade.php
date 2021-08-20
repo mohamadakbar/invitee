@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Template Main CSS File -->
-    <link href="{{ asset('/frontend/template/')}}/css/style.css" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/css/style.css?v=1.0.1" rel="stylesheet">
     <style>
         .modal-content {
             background-size: 50%;
@@ -422,6 +422,7 @@
                         @csrf
                         <div class="form-group">
                             <input type="hidden" name="nama" class="form-control" id="name" value="{{ $param }}">
+                            <input type="hidden" name="slug" class="form-control" id="slug" value="{{ $form->slug }}">
                             <label for="message">Message</label> <textarea name="ucapan" id="" msg cols="30" rows="5" class="form-control formucapan" style="background-color: transparent; border: 1px solid #999999" required></textarea>
                         </div>
                         <div class="g-recaptcha mt-2" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div>
@@ -517,7 +518,7 @@
 <script src="{{ asset('/frontend/template/')}}/vendor/swiper/swiper-bundle.min.js"></script>
 
 <!-- Template Main JS File -->
-<script src="{{ asset('/frontend/template/')}}/js/main.js"></script>
+<script src="{{ asset('/frontend/template/')}}/js/main.js?v=1.0.1"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 {{--<script>--}}
 {{--    window.onload = function() {--}}
@@ -531,7 +532,8 @@
             hour = minute * 60,
             day = hour * 24;
 
-        let birthday = "Sep 05, 2021 08:00:00",
+        // let birthday = "Sep 05, 2021 08:00:00",
+        let birthday = "{{\Carbon\Carbon::parse($form->tgl_akad)->format('M d, Y') }} {{ $form->mulai_akad }}",
             countDown = new Date(birthday).getTime(),
             x = setInterval(function() {
 
@@ -559,6 +561,7 @@
             }, 0)
     }());
 </script>
+
 <script>
     var audio           = document.getElementById('audio');
     var playPauseBTN    = document.getElementById('playPauseBTN');
@@ -581,6 +584,7 @@
         e.preventDefault();
 
         var nama    = $("input[name=nama]").val();
+        var slug    = $("input[name=slug]").val();
         var ucapan  = $("textarea[name=ucapan]").val();
         var captchaResponse = grecaptcha.getResponse();
 
@@ -594,6 +598,7 @@
                 "_token": "{{ csrf_token() }}",
                 "nama":nama,
                 "ucapan":ucapan,
+                "slug":slug,
                 "token":captchaResponse
             },
             success:function(response){

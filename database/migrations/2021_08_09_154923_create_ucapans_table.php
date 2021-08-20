@@ -15,6 +15,8 @@ class CreateUcapansTable extends Migration
     {
         Schema::create('ucapan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('id_form');
+            $table->string('slug', 50);
             $table->string('nama', 100);
             $table->text('ucapan');
             $table->timestamps();

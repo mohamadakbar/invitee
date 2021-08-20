@@ -51,9 +51,8 @@ class UcapanController extends Controller
         $nama   = $request->nama;
         $ucapan = $request->ucapan;
         $token  = $request->token;
-//        $token  = $_POST['g-recaptcha-response'];
+        $slug   = $request->slug;
 
-//        dd($token);
         if ($token || $nama || $ucapan){
             $client     = new Client();
             $response   = $client->post('https://www.google.com/recaptcha/api/siteverify', [
@@ -64,11 +63,11 @@ class UcapanController extends Controller
             ]);
 
             $result = json_decode($response->getBody()->getContents());
-//            dd($result);
             if ($result->success == true){
                 Ucapan::create([
-                    'nama'      => $request->nama,
-                    'ucapan'    => $request->ucapan,
+                    'slug'      => $slug,
+                    'nama'      => $nama,
+                    'ucapan'    => $ucapan,
                 ]);
 
                 return response()->json(
@@ -87,37 +86,6 @@ class UcapanController extends Controller
             }
 
         }
-
-//        $validate = Validator::make(Input::all(), [
-//            'g-recaptcha-response' => 'required|captcha'
-//        ]);
-//
-//        $validator= $this->validate($request,['g-recaptcha-response' => 'required|recaptcha']);
-//
-//        if ($validate->fails()) {
-//            return response()->json($validate->messages(), \Illuminate\Http\Response::HTTP_BAD_REQUEST);
-//        }
-
-//        $request->validate([
-//            'nama' => 'required',
-//            'ucapan' => 'required',
-//            'g-recaptcha-response' => 'required|captcha'
-//        ]);
-//        return response()->json(
-//            [
-//                'errors' => true,
-//                'message' => 'Data inserted fail'
-//            ]
-//        );
-//
-
-//
-//        return response()->json(
-//            [
-//                'success' => true,
-//                'message' => 'Data inserted successfully'
-//            ]
-//        );
     }
 
     /**

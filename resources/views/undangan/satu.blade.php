@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="section-title d-flex justify-content-center mt-auto" style="font-family: Courgette">
-                    <button type="button" class="btn btn-success btn-md btn-rounded btn-cls" id="playPauseBTN" onclick="playPause()" data-dismiss="modal">Buka Undangan</button>
+                    <button type="button" class="btn btn-md btn-rounded btn-cls" id="playPauseBTN" onclick="playPause()" data-dismiss="modal" style="background: #00506a;color: white">Buka Undangan</button>
                 </div>
 
             </div>
@@ -120,12 +120,6 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-        <h1 class="logo me-auto me-lg-0">
-            <a href="index.html">
-                Invitation
-            </a>
-        </h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
 
         <nav class="mobile-bottom-nav">
             @foreach($menu as $menus)
@@ -135,70 +129,55 @@
                     </div>
                 </div>
             @endforeach
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#menu"><i class="fa fa-user fa-2x" style="color: #fff"></i><br>Couple</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#about"><i class="fa fa-envelope-open fa-2x" style="color: #fff"></i><br>Events</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#events"><i class="fa fa-map-marker fa-2x" style="color: #fff"></i><br>Location</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#gallery"><i class="fa fa-photo fa-2x" style="color: #fff"></i><br>Gallery</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#contact"><i class="fa fa-comment fa-2x" style="color: #fff"></i><br>Comment</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
         </nav>
-        <!-- <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a> -->
 
     </div>
 </header><!-- End Header -->
+
 <main id="main">
+
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center" style="background:url( '../upload_img/{{$form->foto_sampul}}' );background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
         <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
             <div class="row">
                 <div class="col-lg-8">
                     <h1>{{ ucfirst($form->nama_panggilan_p) }} <span>& {{ ucfirst($form->nama_panggilan_w) }}</span></h1>
-                    {{--                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>--}}
-
-                    {{--                    <div class="btns">--}}
-                    {{--                        <a href="#about" class="btn-menu animated fadeInUp scrollto">Lihat Undangan</a>--}}
-                    {{--                    </div>--}}
                 </div>
                 <div class="col-lg-4 mt-2 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-                    <h3> "" Ya Allah, dengan segala kesucian hati, kami bersujud memohon ridho-Mu, untuk menuju sunnah rasul-Mu membentuk keluarga yang sakinah, mawadah dan warohmah ""</h3>
+                    <h3 style="color: #ffffff"> "" Ya Allah, dengan segala kesucian hati, kami bersujud memohon ridho-Mu, untuk menuju sunnah rasul-Mu membentuk keluarga yang sakinah, mawadah dan warohmah ""</h3>
                 </div>
 
             </div>
         </div>
+
+        <section>
+            <div class="custom-shape-divider-bottom-1629582647">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
     </section><!-- End Hero -->
 
 
 
-    <section id="menu" class="events" style="background:url('{{ asset('/frontend/template/') }}/img/cover2.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
+{{--    <section id="menu" class="events" style="background:url('{{ asset('/frontend/template/') }}/img/cover2.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">--}}
+    <section id="menu" class="events">
+{{--        <section class="event">--}}
+{{--            <div class="custom-shape-divider-top-1629582605">--}}
+{{--                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">--}}
+{{--                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>--}}
+{{--                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>--}}
+{{--                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>--}}
+{{--                </svg>--}}
+{{--            </div>--}}
+{{--        </section>--}}
         <div class="container" data-aos="fade-up">
             <div class="section-title d-flex justify-content-center mb-3">
                 <h1>Kami yang berbahagia</h1>
             </div>
-            <!-- <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100"> -->
-            <!-- <div class="swiper-wrapper"> -->
 
             <div class="swiper-slide">
                 <div class="row event-item">
@@ -214,29 +193,30 @@
                     </div>
 
                     <div class="col-lg-5">
-                        {{--                        <img style="vertical-align:middle" src="https://via.placeholder.com/60x60">--}}
-                        <img src="{{ asset('/upload_img/')}}/{{ $form->foto_p }}" class="img-fluid" alt="" style="vertical-align:middle; float: right">
-                        {{--                        <h3 style="float: right">{{ ucfirst($form->nama_lengkap_p) }} S.Kom</h3>--}}
+                        <img src="{{ asset('/upload_img/')}}/{{ $form->foto_w }}" class="img-fluid" alt="" style="float: left">
                         <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_p) }}</h3> <h5 class="text-center"> Putera dari Bapak {{ $form->nama_ortu_p_p }} dan Ibu {{ $form->nama_ortu_p_w }}</h5></p>
                     </div>
                 </div>
             </div><!-- End testimonial item -->
-            <!-- </div> -->
             <div class="swiper-pagination"></div>
-            <!-- </div> -->
-
         </div>
+{{--        <div class="custom-shape-divider-bottom-1629581971">--}}
+{{--            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">--}}
+{{--                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>--}}
+{{--                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>--}}
+{{--                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>--}}
+{{--            </svg>--}}
+{{--        </div>--}}
     </section><!-- End Events Section -->
 
-
     <!-- ======= Why Us Section ======= -->
-    <section id="about" class="why-us" style="background-image: url({{ asset('/frontend/template/img/border.png') }}); background-position: top; background-repeat: no-repeat; background-size: auto;">
+    <section id="about" class="why-us" style="background-image: url({{ asset('/frontend/template/img/gambar/1copy.png') }}); background-position: top; background-repeat: no-repeat; background-size: auto;">
         <br><br><br><br><br>
         <div class="container" data-aos="fade-up">
 
             <div class="section-title d-flex justify-content-center">
                 <!-- <h2>Why Us</h2> -->
-                <p class="ass">Assalamu'alaikum Wr. Wb</p>
+                <h1>Assalamu'alaikum Wr. Wb</h1>
                 <!-- <h1 style="font-family:'UVF Aphrodite Pro';font-weight:normal;font-size:42px">AaBbCcDdEeFfGgHhŞşIıİi Example</h1> -->
             </div>
 
@@ -316,7 +296,7 @@
                         {!! $form->link_loc !!}
 {{--                    </div>--}}
                     <div class="form-group text-center mt-2">
-                        <a href="https://goo.gl/maps/zVyWrK2t9VrFvTbc8" target="_blank" style="background: #cda45e;border: 0;padding: 10px 35px;color: #fff;transition: 0.4s;border-radius: 50px; font-size: 17px" class="btn-sm mt-3">Lihat lokasi</a>
+                        <a href="https://goo.gl/maps/zVyWrK2t9VrFvTbc8" target="_blank" style="background: #00506a;border: 0;padding: 10px 35px;color: #fff;transition: 0.4s;border-radius: 50px; font-size: 17px" class="btn-sm mt-3">Lihat lokasi</a>
                     </div>
 {{--                    <a href="https://goo.gl/maps/zVyWrK2t9VrFvTbc8"> link</a>--}}
                 </div>
@@ -417,42 +397,99 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-5 text-center">
+                <div class="col-md-12 text-center">
                     <h1>Ucapan dan Doa</h1>
-                    <form id="algin-form" action="" method="POST" role="form" class="php-email-form btn-submits mt-4">
-                        @csrf
-                        <div class="form-group">
-                            <input type="hidden" name="nama" class="form-control" id="name" value="{{ $param }}">
-                            <input type="hidden" name="slug" class="form-control" id="slug" value="{{ $form->slug }}">
-                            <label for="message">Message</label> <textarea name="ucapan" id="" msg cols="30" rows="5" class="form-control formucapan" style="background-color: transparent; border: 1px solid #999999" required></textarea>
-                        </div>
-                        <div class="g-recaptcha mt-2" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div>
-                        <div class="form-group"> <button type="submit" class="btn btn-primary btn-sm mt-3">Post Comment</button> </div>
-                    </form>
-                </div>
-
-                <div class="col-sm-7 mb-5 komentar text-center">
-                    <h1>Comments</h1>
-                    <div class="scrollbar" id="ucapan">
-                        @foreach($ucapan as $ucp)
-                            @if( $ucp->id % 2 == 0)
-                                <div class="comment text-justify mt-3 float-left col-md-12"> <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
-                                    <h4>{{ ucfirst($ucp->nama) }}</h4> <span>- {{ $ucp->created_at->format('j F Y, g:i a') }}</span> <br>
-                                    <p>{{ $ucp->ucapan }}</p>
-                                </div>
-                            @else
-                                <div class="darker text-justify mt-3 float-right col-md-12"> <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
-                                    <h4>{{ ucfirst($ucp->nama) }}</h4> <span>- {{ $ucp->created_at->format('j F Y, g:i a') }}</span> <br>
-                                    <p>{{ $ucp->ucapan }}</p>
-                                </div>
-                            @endif
-                        @endforeach
+{{--                    <form id="algin-form" action="" method="POST" role="form" class="php-email-form btn-submits mt-4">--}}
+{{--                        @csrf--}}
+{{--                        <div class="form-group">--}}
+{{--                            <input type="hidden" name="nama" class="form-control" id="name" value="{{ $param }}">--}}
+{{--                            <input type="hidden" name="slug" class="form-control" id="slug" value="{{ $form->slug }}">--}}
+{{--                            <label for="message">Message</label> <textarea name="ucapan" id="" msg cols="30" rows="5" class="form-control formucapan" style="background-color: transparent; border: 1px solid #999999" required></textarea>--}}
+{{--                        </div>--}}
+{{--                        <div class="g-recaptcha mt-2" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div>--}}
+{{--                        <div class="form-group"> <button type="submit" class="btn btn-primary btn-sm mt-3">Post Comment</button> </div>--}}
+{{--                    </form>--}}
+                    <div class="section-form">
+                        <form method="post" action="#">
+                            <div class="intro">
+{{--                                <h1>Ucapan</h1>--}}
+{{--                                <h2>Get your project started today</h2>--}}
+                            </div>
+                            <input type="text" value="" placeholder="Name" name="name" tabindex="1"/>
+{{--                            <input type="text" value="" placeholder="E-mail" name="email" tabindex="3"/>--}}
+{{--                            <input type="text" value="" placeholder="Budget" name="budget" tabindex="2"/>--}}
+                            <textarea placeholder="Message" name="Message" tabindex="5" rows="10"></textarea>
+                            <input type="button" value="Send Mail" tabindex="6"/>
+                        </form>
                     </div>
                 </div>
+
+                <section class="testimonial text-center">
+                    <div class="container">
+
+{{--                        <div class="heading white-heading">--}}
+                            <h1>Comment</h1>
+{{--                        </div>--}}
+                        <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000" data-duration="2000">
+
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <div class="testimonial4_slide">
+                                        <img src="https://i.ibb.co/8x9xK4H/team.jpg" class="img-circle img-responsive" />
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                                        <h4>Client 1</h4>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="testimonial4_slide">
+                                        <img src="https://i.ibb.co/8x9xK4H/team.jpg" class="img-circle img-responsive" /><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                                        <h4>Client 2</h4>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="testimonial4_slide">
+                                        <img src="https://i.ibb.co/8x9xK4H/team.jpg" class="img-circle img-responsive" />
+                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                                        <h4>Client 3</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#testimonial4" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#testimonial4" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+{{--                <div class="col-sm-7 mb-5 komentar text-center">--}}
+{{--                    <h1>Comments</h1>--}}
+{{--                    <div class="scrollbar" id="ucapan">--}}
+{{--                        @foreach($ucapan as $ucp)--}}
+{{--                            @if( $ucp->id % 2 == 0)--}}
+{{--                                <div class="comment text-justify mt-3 float-left col-md-12"> <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">--}}
+{{--                                    <h4>{{ ucfirst($ucp->nama) }}</h4> <span>- {{ $ucp->created_at->format('j F Y, g:i a') }}</span> <br>--}}
+{{--                                    <p>{{ $ucp->ucapan }}</p>--}}
+{{--                                </div>--}}
+{{--                            @else--}}
+{{--                                <div class="darker text-justify mt-3 float-right col-md-12"> <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">--}}
+{{--                                    <h4>{{ ucfirst($ucp->nama) }}</h4> <span>- {{ $ucp->created_at->format('j F Y, g:i a') }}</span> <br>--}}
+{{--                                    <p>{{ $ucp->ucapan }}</p>--}}
+{{--                                </div>--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
             </div>
         </div>
     </section>
+
+
+
+
 
     <section id="protocol" class="why-us">
 
@@ -469,7 +506,7 @@
                 <div class="col-lg-12">
                     <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
                         <p style="font-size: 25px; font-family: 'Patrick Hand', cursive; color: #cda45e">Dalam rangka mencegah penularan <strong>Covid-19</strong>, dimohon untuk dapat melaksanakan protokol kesehatan. Dengan tetap menggunakan masker, menjaga jarak dan mencuci tangan.</p>
-                        <img src="{{ asset('/frontend/template/img/protocol.png') }}" alt="">
+                        <img src="{{ asset('/frontend/template/img/gambar/protokol.png') }}" alt="">
                     </div>
                 </div>
             </div>

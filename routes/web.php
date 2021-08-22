@@ -33,7 +33,9 @@ Route::post('/form/store', 'FormController@store')->name('form.store');
 Route::post('/storeucapan', 'UcapanController@store')->name('ucapan.store');
 
 //TEMPLATE
-Route::get('/u/{nama}', 'TemplateController@index')->name('undangan');
+Route::get('/u/{nama}', 'UndanganController@index')->name('undangan');
+Route::get('/demo1/', 'TemplateController@template2')->name('template1');
+Route::get('/demo2/', 'TemplateController@template2')->name('template2');
 
 // USERS
 Route::get('users', 'UserController@index')->name('users');

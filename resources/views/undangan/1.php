@@ -28,8 +28,8 @@
     <link href="{{ asset('/frontend/template/')}}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- Undangan Main CSS File -->
-    <link href="{{ asset('/frontend/template/')}}/css/style1.css?v=1.0.1" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('/frontend/template/')}}/css/style.css?v=1.0.1" rel="stylesheet">
     <style>
         .modal-content {
             background-size: 50%;
@@ -54,8 +54,8 @@
     </script>
 
     <!-- =======================================================
-    * Undangan Name: Restaurantly - v3.3.0
-    * Undangan URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+    * Template Name: Restaurantly - v3.3.0
+    * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
@@ -120,12 +120,12 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
         <h1 class="logo me-auto me-lg-0">
             <a href="index.html">
                 Invitation
             </a>
         </h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
 
         <nav class="mobile-bottom-nav">
             @foreach($menu as $menus)
@@ -135,70 +135,55 @@
                     </div>
                 </div>
             @endforeach
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#menu"><i class="fa fa-user fa-2x" style="color: #fff"></i><br>Couple</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#about"><i class="fa fa-envelope-open fa-2x" style="color: #fff"></i><br>Events</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#events"><i class="fa fa-map-marker fa-2x" style="color: #fff"></i><br>Location</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#gallery"><i class="fa fa-photo fa-2x" style="color: #fff"></i><br>Gallery</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#contact"><i class="fa fa-comment fa-2x" style="color: #fff"></i><br>Comment</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
         </nav>
-        <!-- <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a> -->
 
     </div>
 </header><!-- End Header -->
+
 <main id="main">
+
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center" style="background:url( '../upload_img/{{$form->foto_sampul}}' );background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
         <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
             <div class="row">
                 <div class="col-lg-8">
                     <h1>{{ ucfirst($form->nama_panggilan_p) }} <span>& {{ ucfirst($form->nama_panggilan_w) }}</span></h1>
-                    {{--                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>--}}
-
-                    {{--                    <div class="btns">--}}
-                    {{--                        <a href="#about" class="btn-menu animated fadeInUp scrollto">Lihat Undangan</a>--}}
-                    {{--                    </div>--}}
                 </div>
                 <div class="col-lg-4 mt-2 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-                    <h3> "" Ya Allah,,, dengan segala kesucian hati, kami bersujud memohon ridho-Mu, untuk menuju sunnah rasul-Mu membentuk keluarga yang sakinah, mawadah dan warohmah ""</h3>
+                    <h3> "" Ya Allah, dengan segala kesucian hati, kami bersujud memohon ridho-Mu, untuk menuju sunnah rasul-Mu membentuk keluarga yang sakinah, mawadah dan warohmah ""</h3>
                 </div>
 
             </div>
         </div>
+
+        <section>
+            <div class="custom-shape-divider-bottom-1629582647">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
     </section><!-- End Hero -->
 
 
 
-    <section id="menu" class="events" style="background:url('{{ asset('/frontend/template/') }}/img/cover2.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
+{{--    <section id="menu" class="events" style="background:url('{{ asset('/frontend/template/') }}/img/cover2.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">--}}
+    <section id="menu" class="events" style="background-color: #ffecec">
+        <section class="event">
+            <div class="custom-shape-divider-top-1629582605">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
         <div class="container" data-aos="fade-up">
             <div class="section-title d-flex justify-content-center mb-3">
                 <h1>Kami yang berbahagia</h1>
             </div>
-            <!-- <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100"> -->
-            <!-- <div class="swiper-wrapper"> -->
 
             <div class="swiper-slide">
                 <div class="row event-item">
@@ -214,20 +199,21 @@
                     </div>
 
                     <div class="col-lg-5">
-                        {{--                        <img style="vertical-align:middle" src="https://via.placeholder.com/60x60">--}}
                         <img src="{{ asset('/upload_img/')}}/{{ $form->foto_p }}" class="img-fluid" alt="" style="vertical-align:middle; float: right">
-                        {{--                        <h3 style="float: right">{{ ucfirst($form->nama_lengkap_p) }} S.Kom</h3>--}}
                         <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_p) }}</h3> <h5 class="text-center"> Putera dari Bapak {{ $form->nama_ortu_p_p }} dan Ibu {{ $form->nama_ortu_p_w }}</h5></p>
                     </div>
                 </div>
             </div><!-- End testimonial item -->
-            <!-- </div> -->
             <div class="swiper-pagination"></div>
-            <!-- </div> -->
-
+        </div>
+        <div class="custom-shape-divider-bottom-1629581971">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+            </svg>
         </div>
     </section><!-- End Events Section -->
-
 
     <!-- ======= Why Us Section ======= -->
     <section id="about" class="why-us" style="background-image: url({{ asset('/frontend/template/img/border.png') }}); background-position: top; background-repeat: no-repeat; background-size: auto;">
@@ -518,7 +504,7 @@
 {{--<script src="{{ asset('/template/')}}/vendor/php-email-form/validate.js"></script>--}}
 <script src="{{ asset('/frontend/template/')}}/vendor/swiper/swiper-bundle.min.js"></script>
 
-<!-- Undangan Main JS File -->
+<!-- Template Main JS File -->
 <script src="{{ asset('/frontend/template/')}}/js/main.js?v=1.0.1"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 {{--<script>--}}

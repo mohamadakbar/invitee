@@ -26,7 +26,7 @@ define(function (require) {
             // 位置 {Array} | {Function}
             // position: null
 
-            // 内容格式器：{string}（Template） ¦ {Function}
+            // 内容格式器：{string}（Undangan） ¦ {Function}
             // formatter: null
 
             showDelay: 0,

@@ -91,7 +91,7 @@
         <div class="modal-content">
             <div class="container" data-aos="fade-up">
                 <div class="d-flex justify-content-center m-1">
-                    <img src="{{ asset('/frontend/template/img/cover-dpn.jpg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
+                    <img src="{{ asset('/upload_img/contoh_gallery.png/') }}" alt="" style="width: 30%; height: 30%; border-radius: 60%;margin-top: 10%">
                 </div>
                 <div class="d-flex justify-content-center m-1" style="font-family: Courgette">
                     Kepada Yth:
@@ -120,49 +120,47 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-        <h1 class="logo me-auto me-lg-0">
-            <a href="index.html">
-                Invitation
-            </a>
-        </h1>
+{{--        <h1 class="logo me-auto me-lg-0">--}}
+{{--            <a href="index.html">--}}
+{{--                Invitation--}}
+{{--            </a>--}}
+{{--        </h1>--}}
         <!-- Uncomment below if you prefer to use an image logo -->
 
         <nav class="mobile-bottom-nav">
-            @foreach($menu as $menus)
-                <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
-                    <div class="mobile-bottom-nav__item-content">
-                        <a href="#{{ $menus->slug }}">{!! $menus->icon !!}<br>{{ $menus->nama_menu }}</a>
-                    </div>
+            <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
+                <div class="mobile-bottom-nav__item-content">
+               <a href="#hero"><i class="fa fa-home fa-2x" style="color: #fff"></i><br>Couple</a>
                 </div>
-            @endforeach
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#menu"><i class="fa fa-user fa-2x" style="color: #fff"></i><br>Couple</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#about"><i class="fa fa-envelope-open fa-2x" style="color: #fff"></i><br>Events</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#menu"><i class="fa fa-user fa-2x" style="color: #fff"></i><br>Couple</a>
+                </div>
+            </div>
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#about"><i class="fa fa-envelope-open fa-2x" style="color: #fff"></i><br>Events</a>
+                </div>
+            </div>
 
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#events"><i class="fa fa-map-marker fa-2x" style="color: #fff"></i><br>Location</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#events"><i class="fa fa-map-marker fa-2x" style="color: #fff"></i><br>Location</a>
+                </div>
+            </div>
 
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#gallery"><i class="fa fa-photo fa-2x" style="color: #fff"></i><br>Gallery</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#gallery"><i class="fa fa-photo fa-2x" style="color: #fff"></i><br>Gallery</a>
+                </div>
+            </div>
 
-{{--            <div class="mobile-bottom-nav__item">--}}
-{{--                <div class="mobile-bottom-nav__item-content">--}}
-{{--                    <a href="#contact"><i class="fa fa-comment fa-2x" style="color: #fff"></i><br>Comment</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            <div class="mobile-bottom-nav__item">
+                <div class="mobile-bottom-nav__item-content">
+                    <a href="#contact"><i class="fa fa-comment fa-2x" style="color: #fff"></i><br>Comment</a>
+                </div>
+            </div>
 
         </nav>
         <!-- <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Book a table</a> -->
@@ -171,11 +169,11 @@
 </header><!-- End Header -->
 <main id="main">
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center" style="background:url( '../upload_img/{{$form->foto_sampul}}' );background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
+    <section id="hero" class="d-flex align-items-center" style="background:url( '../upload_img/contoh_gallery.png' );background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
         <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
             <div class="row">
                 <div class="col-lg-8">
-                    <h1>{{ ucfirst($form->nama_panggilan_p) }} <span>& {{ ucfirst($form->nama_panggilan_w) }}</span></h1>
+                    <h1>Budi<span> & Amel</span></h1>
                     {{--                    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>--}}
 
                     {{--                    <div class="btns">--}}
@@ -192,7 +190,7 @@
 
 
 
-    <section id="menu" class="events" style="background:url('{{ asset('/frontend/template/') }}/img/cover2.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
+    <section id="menu" class="events" style="background:url('{{ asset('/frontend/template/') }}/img/cover.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: 10% 20%; background-position: center; background-repeat: no-repeat; background-size: cover; object-fit: fill; object-position: 20% 10%; ">
         <div class="container" data-aos="fade-up">
             <div class="section-title d-flex justify-content-center mb-3">
                 <h1>Kami yang berbahagia</h1>
@@ -203,8 +201,8 @@
             <div class="swiper-slide">
                 <div class="row event-item">
                     <div class="col-lg-5">
-                        <img src="{{ asset('/upload_img/')}}/{{ $form->foto_w }}" class="img-fluid" alt="" style="float: left">
-                        <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_w) }}</h3> <h5 class="text-center"> Puteri dari Bapak {{ $form->nama_ortu_w_p }} dan Ibu {{ $form->nama_ortu_w_w }}</h5></p>
+                        <img src="{{ asset('/upload_img/contoh_pria.png')}}" class="img-fluid" alt="" style="float: left">
+                        <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">Budi Darmawan</h3> <h5 class="text-center"> Puteri dari Bapak Rozak dan Ibu Fatimah</h5></p>
                     </div>
 
                     <div class="col-lg-2 centered">
@@ -215,9 +213,9 @@
 
                     <div class="col-lg-5">
                         {{--                        <img style="vertical-align:middle" src="https://via.placeholder.com/60x60">--}}
-                        <img src="{{ asset('/upload_img/')}}/{{ $form->foto_p }}" class="img-fluid" alt="" style="vertical-align:middle; float: right">
+                        <img src="{{ asset('/upload_img/contoh_pria.png')}}" class="img-fluid" alt="" style="float: left">
                         {{--                        <h3 style="float: right">{{ ucfirst($form->nama_lengkap_p) }} S.Kom</h3>--}}
-                        <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_p) }}</h3> <h5 class="text-center"> Putera dari Bapak {{ $form->nama_ortu_p_p }} dan Ibu {{ $form->nama_ortu_p_w }}</h5></p>
+                        <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">Amel</h3> <h5 class="text-center"> Putera dari Bapak Idan dan Ibu Wati</h5></p>
                     </div>
                 </div>
             </div><!-- End testimonial item -->
@@ -253,21 +251,20 @@
                     <div class="box" data-aos="zoom-in" data-aos-delay="100">
                         <img src="{{ asset('/frontend/template/')}}/img/ring.png" class="img-fluid" alt="" style="float: left;border-radius: 20px; width: 7%;"><span>  AKAD NIKAH</span>
                         <div class="text-body" style="margin-left: 10px;">
-                            <h6 style="color: #666666;margin-bottom: 0 !important;font-family: Courgette""><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_akad)->format('l, j F Y') }}</h6>
-                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-clock-o"></i>  {{ $form->mulai_akad }} WIB - {{ $form->selesai_akad }} WIB</p>
-                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-map-marker"></i>  {{ ucfirst($form->tempat_akad) }} {{ ucfirst($form->alamat_akad) }}</p>
+                            <h6 style="color: #666666;margin-bottom: 0 !important;font-family: Courgette"><i class="fa fa-calendar"></i> Sunday, 01 January 2020</h6>
+                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-clock-o"></i>  08:00 WIB - 09:00 WIB</p>
+                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-map-marker"></i>  Ciledug Tangerang</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 mt-2 mt-lg-0">
                     <div class="box" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="{{ asset('/frontend/template/')}}/img/res.png" class="img-fluid" alt="" style="float: left;border-radius: 15px; width: 7%;"><span>RESEPSI</span>
+                        <img src="{{ asset('/frontend/template/')}}/img/ring.png" class="img-fluid" alt="" style="float: left;border-radius: 20px; width: 7%;"><span>  AKAD NIKAH</span>
                         <div class="text-body" style="margin-left: 10px;">
-                            <h6 style="color: #666666;margin-bottom: 0 !important;font-family: Courgette""><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_res)->format('l, j F Y') }}</h6>
-                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-clock-o"></i>  {{ $form->mulai_res }} WIB - {{ $form->selesai_res }}</p>
-                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-map-marker"></i>  {{ $form->tempat_res }} {{ $form->alamat_res }}</p>
-                        </div>
+                            <h6 style="color: #666666;margin-bottom: 0 !important;font-family: Courgette"><i class="fa fa-calendar"></i> Sunday, 01 January 2020</h6>
+                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-clock-o"></i>  09:00 WIB - 20:00 WIB</p>
+                            <p style="color: #666666; font-family: Courgette"><i class="fa fa-map-marker"></i>  Ciledug Tangerang</p>
                     </div>
                 </div>
 
@@ -313,10 +310,10 @@
                 <div class="col-lg-12">
 {{--                    <iframe style="border:0; width: 100%; height: 350px;" src="{{ $form->link_loc }}"></iframe>--}}
 {{--                    <div id="maps" style="border:0; width: 100%; height: 350px;">--}}
-                        {!! $form->link_loc !!}
+                    <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2611891531396!2d106.68384645971115!3d-6.229256101657134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbc1c3b6c5d9%3A0xd6d1f44e4701918!2sPasar%20Modern%20Graha%20Raya!5e0!3m2!1sid!2sid!4v1629599523322!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 {{--                    </div>--}}
                     <div class="form-group text-center mt-2">
-                        <a href="https://goo.gl/maps/zVyWrK2t9VrFvTbc8" target="_blank" style="background: #cda45e;border: 0;padding: 10px 35px;color: #fff;transition: 0.4s;border-radius: 50px; font-size: 17px" class="btn-sm mt-3">Lihat lokasi</a>
+                        <a href="https://goo.gl/maps/UASLE4gEp2rwsvJA8" target="_blank" style="background: #cda45e;border: 0;padding: 10px 35px;color: #fff;transition: 0.4s;border-radius: 50px; font-size: 17px" class="btn-sm mt-3">Lihat lokasi</a>
                     </div>
 {{--                    <a href="https://goo.gl/maps/zVyWrK2t9VrFvTbc8"> link</a>--}}
                 </div>
@@ -340,17 +337,62 @@
 
             <div class="row">
 
-                @foreach($gallery as $gal)
+{{--                @foreach($gallery as $gal)--}}
                     {{--                    {{ $gal }}--}}
-                    <div class="col-lg-4 col-md-6 mb-3">
-                        <div class="gallery-item">
-                            <a href="{{ asset('gallery_img')}}/{{ $gal->foto_gallery }}" class="gallery-lightbox"
-                               data-gall="gallery-item">
-                                <img src="{{ asset('gallery_img')}}/{{ $gal->foto_gallery }}" alt="" class="img-fluid">
-                            </a>
-                        </div>
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="gallery-item">
+                        <a href="{{ asset('upload_img/contoh_gallery.png')}}" class="gallery-lightbox"
+                           data-gall="gallery-item">
+                            <img src="{{ asset('upload_img/contoh_gallery.png')}}" alt="" class="img-fluid">
+                        </a>
                     </div>
-                @endforeach
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="gallery-item">
+                        <a href="{{ asset('upload_img/contoh_gallery.png')}}" class="gallery-lightbox"
+                           data-gall="gallery-item">
+                            <img src="{{ asset('upload_img/contoh_gallery.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="gallery-item">
+                        <a href="{{ asset('upload_img/contoh_gallery.png')}}" class="gallery-lightbox"
+                           data-gall="gallery-item">
+                            <img src="{{ asset('upload_img/contoh_gallery.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="gallery-item">
+                        <a href="{{ asset('upload_img/contoh_gallery.png')}}" class="gallery-lightbox"
+                           data-gall="gallery-item">
+                            <img src="{{ asset('upload_img/contoh_gallery.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="gallery-item">
+                        <a href="{{ asset('upload_img/contoh_gallery.png')}}" class="gallery-lightbox"
+                           data-gall="gallery-item">
+                            <img src="{{ asset('upload_img/contoh_gallery.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-3">
+                    <div class="gallery-item">
+                        <a href="{{ asset('upload_img/contoh_gallery.png')}}" class="gallery-lightbox"
+                           data-gall="gallery-item">
+                            <img src="{{ asset('upload_img/contoh_gallery.png')}}" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+{{--                @endforeach--}}
 
             </div>
 
@@ -423,7 +465,7 @@
                         @csrf
                         <div class="form-group">
                             <input type="hidden" name="nama" class="form-control" id="name" value="{{ $param }}">
-                            <input type="hidden" name="slug" class="form-control" id="slug" value="{{ $form->slug }}">
+                            <input type="hidden" name="slug" class="form-control" id="slug">
                             <label for="message">Message</label> <textarea name="ucapan" id="" msg cols="30" rows="5" class="form-control formucapan" style="background-color: transparent; border: 1px solid #999999" required></textarea>
                         </div>
                         <div class="g-recaptcha mt-2" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div>
@@ -434,19 +476,19 @@
                 <div class="col-sm-7 mb-5 komentar text-center">
                     <h1>Comments</h1>
                     <div class="scrollbar" id="ucapan">
-                        @foreach($ucapan as $ucp)
-                            @if( $ucp->id % 2 == 0)
-                                <div class="comment text-justify mt-3 float-left col-md-12"> <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
-                                    <h4>{{ ucfirst($ucp->nama) }}</h4> <span>- {{ $ucp->created_at->format('j F Y, g:i a') }}</span> <br>
-                                    <p>{{ $ucp->ucapan }}</p>
-                                </div>
-                            @else
-                                <div class="darker text-justify mt-3 float-right col-md-12"> <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
-                                    <h4>{{ ucfirst($ucp->nama) }}</h4> <span>- {{ $ucp->created_at->format('j F Y, g:i a') }}</span> <br>
-                                    <p>{{ $ucp->ucapan }}</p>
-                                </div>
-                            @endif
-                        @endforeach
+{{--                        @foreach($ucapan as $ucp)--}}
+{{--                            @if( $ucp->id % 2 == 0)--}}
+{{--                                <div class="comment text-justify mt-3 float-left col-md-12"> <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">--}}
+{{--                                    <h4>{{ ucfirst($ucp->nama) }}</h4> <span>- {{ $ucp->created_at->format('j F Y, g:i a') }}</span> <br>--}}
+{{--                                    <p>{{ $ucp->ucapan }}</p>--}}
+{{--                                </div>--}}
+{{--                            @else--}}
+{{--                                <div class="darker text-justify mt-3 float-right col-md-12"> <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">--}}
+{{--                                    <h4>{{ ucfirst($ucp->nama) }}</h4> <span>- {{ $ucp->created_at->format('j F Y, g:i a') }}</span> <br>--}}
+{{--                                    <p>{{ $ucp->ucapan }}</p>--}}
+{{--                                </div>--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
                     </div>
                 </div>
 
@@ -491,7 +533,7 @@
                 <div class="col-lg-12">
                     <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
                         <p style="font-size: 25px">Terima kasih</p>
-                        {{ ucfirst($form->nama_panggilan_p) }} & {{ ucfirst($form->nama_panggilan_w) }}
+                        Budi & Amel
                     </div>
                 </div>
             </div>
@@ -534,7 +576,7 @@
             day = hour * 24;
 
         // let birthday = "Sep 05, 2021 08:00:00",
-        let birthday = "{{\Carbon\Carbon::parse($form->tgl_akad)->format('M d, Y') }} {{ $form->mulai_akad }}",
+        let birthday = "Sep 05, 2022 08:00:00",
             countDown = new Date(birthday).getTime(),
             x = setInterval(function() {
 

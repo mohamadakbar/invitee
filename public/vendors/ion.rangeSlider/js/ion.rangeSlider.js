@@ -115,7 +115,7 @@
 
 
     // =================================================================================================================
-    // Template
+    // Undangan
 
     var base_html =
         '<span class="irs">' +
@@ -745,7 +745,7 @@
                 this.is_finish = true;
                 this.callOnFinish();
             }
-            
+
             this.dragging = false;
         },
 

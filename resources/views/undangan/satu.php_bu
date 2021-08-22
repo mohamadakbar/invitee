@@ -28,8 +28,8 @@
     <link href="{{ asset('/frontend/template/')}}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- Undangan Main CSS File -->
-    <link href="{{ asset('/frontend/template/')}}/css/style1.css?v=1.0.1" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('/frontend/template/')}}/css/style.css?v=1.0.1" rel="stylesheet">
     <style>
         .modal-content {
             background-size: 50%;
@@ -54,8 +54,8 @@
     </script>
 
     <!-- =======================================================
-    * Undangan Name: Restaurantly - v3.3.0
-    * Undangan URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+    * Template Name: Restaurantly - v3.3.0
+    * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
@@ -183,7 +183,7 @@
                     {{--                    </div>--}}
                 </div>
                 <div class="col-lg-4 mt-2 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
-                    <h3> "" Ya Allah,,, dengan segala kesucian hati, kami bersujud memohon ridho-Mu, untuk menuju sunnah rasul-Mu membentuk keluarga yang sakinah, mawadah dan warohmah ""</h3>
+                    <h3> "" Ya Allah, dengan segala kesucian hati, kami bersujud memohon ridho-Mu, untuk menuju sunnah rasul-Mu membentuk keluarga yang sakinah, mawadah dan warohmah ""</h3>
                 </div>
 
             </div>
@@ -518,7 +518,7 @@
 {{--<script src="{{ asset('/template/')}}/vendor/php-email-form/validate.js"></script>--}}
 <script src="{{ asset('/frontend/template/')}}/vendor/swiper/swiper-bundle.min.js"></script>
 
-<!-- Undangan Main JS File -->
+<!-- Template Main JS File -->
 <script src="{{ asset('/frontend/template/')}}/js/main.js?v=1.0.1"></script>
 <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 {{--<script>--}}

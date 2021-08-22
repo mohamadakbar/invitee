@@ -39,7 +39,7 @@ class Form extends Authenticatable
 //    public $timestamps = false;
 
     public function template(){
-        return $this->belongsTo('App\Model\Template');
+        return $this->belongsTo('App\Model\Undangan');
     }
 
     public function gallery(){

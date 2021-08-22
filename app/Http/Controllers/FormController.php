@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Form;
 use App\Model\Gallery;
-use App\Model\Template;
+use App\Model\Undangan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -19,15 +19,15 @@ class FormController extends Controller
     public function index()
     {
         $form = Form::where('id_user', Auth::user()->id)->first();
-//        dd(Auth::user()->id);
-        $tmp = Template::where('id',$form->template_id)->first();
-        $temp = Template::all();
+        $tmp = Undangan::where('id',$form->template_id)->first();
+//        dd($tmp);
+        $temp = Undangan::all();
         return view('form.index', ['tmp' => $tmp, 'form' => $form, 'temp' => $temp]);
     }
 
     public function create()
     {
-        $tmp = Template::all();
+        $tmp = Undangan::all();
         return view('form.create', ['tmp' => $tmp]);
     }
 
@@ -159,7 +159,7 @@ class FormController extends Controller
     public function edit($slug)
     {
         $form = Form::where('slug', $slug)->first();
-        $temp = Template::all();
+        $temp = Undangan::all();
         if (!$form){
             return redirect('dashboard')->with(['error' => 'Not permitted']);
         }elseif($form->is_create == 0){

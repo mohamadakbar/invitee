@@ -5,7 +5,7 @@
     <title>Weinvitee</title>
     <!--
 
-    Eatery Cafe Template
+    Eatery Cafe Undangan
 
     http://www.templatemo.com/tm-515-eatery
 
@@ -157,68 +157,42 @@
 
             <div class="col-md-12 col-sm-12">
                 <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
-                    <h2>Paket kami</h2>
+                    <h2>Template Undangan kami</h2>
                     <!-- <h4>They are nice &amp; friendly</h4> -->
                     <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat provident tempore nemo dignissimos tempora, cumque ipsam animi saepe qui.</h4>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-8">
-                <div class="footer-info footer-open-hour">
-                    <div class="section-title text-center">
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>
-                    </div>
-                    <div class="wow fadeInUp" data-wow-delay="0.4s">
-                        <p>Monday: Closed</p>
-                        <div>
-                            <strong>Tuesday to Friday</strong>
-                            <p>7:00 AM - 9:00 PM</p>
-                        </div>
-                        <div>
-                            <strong>Saturday - Sunday</strong>
-                            <p>11:00 AM - 10:00 PM</p>
-                        </div>
-                    </div>
+            <div class="col-md-6 col-sm-8">
+                <div class="footer-info text-center" style="background-color: #2B81AF; border-radius: 10px">
+                    <h2 class="wow fadeInUp" data-wow-delay="0.2s" style="color: white"><a href="{{ route('template1') }}" target="_blank"> Template 1</a></h2>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-8">
-                <div class="footer-info footer-open-hour">
-                    <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>
-                    </div>
-                    <div class="wow fadeInUp" data-wow-delay="0.4s">
-                        <p>Monday: Closed</p>
-                        <div>
-                            <strong>Tuesday to Friday</strong>
-                            <p>7:00 AM - 9:00 PM</p>
-                        </div>
-                        <div>
-                            <strong>Saturday - Sunday</strong>
-                            <p>11:00 AM - 10:00 PM</p>
-                        </div>
-                    </div>
+            <div class="col-md-6 col-sm-8">
+                <div class="footer-info text-center" style="background-color: #2B81AF; border-radius: 10px">
+                    <h2 class="wow fadeInUp" data-wow-delay="0.2s" style="color: white"><a href="{{ route('template2') }}" target="_blank"> Template 2</a></h2>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-8">
-                <div class="footer-info footer-open-hour">
-                    <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>
-                    </div>
-                    <div class="wow fadeInUp" data-wow-delay="0.4s">
-                        <p>Monday: Closed</p>
-                        <div>
-                            <strong>Tuesday to Friday</strong>
-                            <p>7:00 AM - 9:00 PM</p>
-                        </div>
-                        <div>
-                            <strong>Saturday - Sunday</strong>
-                            <p>11:00 AM - 10:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="col-md-6 col-sm-8">--}}
+{{--                <div class="footer-info footer-open-hour">--}}
+{{--                    <div class="section-title">--}}
+{{--                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>--}}
+{{--                    </div>--}}
+{{--                    <div class="wow fadeInUp" data-wow-delay="0.4s">--}}
+{{--                        <p>Monday: Closed</p>--}}
+{{--                        <div>--}}
+{{--                            <strong>Tuesday to Friday</strong>--}}
+{{--                            <p>7:00 AM - 9:00 PM</p>--}}
+{{--                        </div>--}}
+{{--                        <div>--}}
+{{--                            <strong>Saturday - Sunday</strong>--}}
+{{--                            <p>11:00 AM - 10:00 PM</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
         </div>
     </div>

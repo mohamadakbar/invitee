@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUndangansTable extends Migration
+class CreateTemplatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUndangansTable extends Migration
      */
     public function up()
     {
-        Schema::create('undangan', function (Blueprint $table) {
+        Schema::create('template', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama_template');
-            $table->string('slug');
+            $table->string('nama_template',50);
+            $table->string('slug',50);
             $table->timestamps();
         });
     }

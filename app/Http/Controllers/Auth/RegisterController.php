@@ -80,14 +80,15 @@ class RegisterController extends Controller
             'id_paket' => $data['paket'],
             'is_new' => 0,
             'roles' => 2,
+            'template_id' => $data['template_id'],
         ]);
         $insert_id = $user->id;
         return Form::create([
             'id_user'       => $insert_id,
             'is_create'     => 0,
-            'template_id'   => 0,
+            'template_id' => $data['template_id'],
         ]);
 
-        return $user;
+//        return $user;
     }
 }

@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->integer('is_new');
             $table->integer('id_paket');
             $table->integer('roles');
+            $table->integer('template_id');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

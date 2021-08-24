@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\AksesMenu;
 use App\Model\Gallery;
+use App\Model\MenuTemplate;
 use App\Model\Paket;
 use App\Model\Undangan;
 use App\Model\Form;
@@ -10,6 +12,7 @@ use App\Model\Ucapan;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class UndanganController extends Controller
 {
@@ -24,32 +27,26 @@ class UndanganController extends Controller
         $pria = $expl[0];
         $wanita = $expl[1];
 
-        $form = Form::select('*')
+        $form   = Form::select('*')
                 ->where('nama_panggilan_p', $pria)
                 ->where('nama_panggilan_w', $wanita)
                 ->first();
-        $user = User::where('id', $form->id_user)->get();
-        foreach ($user as $us){
-            $menu = Paket::select("*")->with('menu')->where('id', $us->id_paket)->first();
-        }
 
-        $menu_temp = array();
-        foreach ($menu->menu as $menus){
-//            print_r();
-            $menu_temp[] = $menus;
-        }
-//        print_r($menu_temp);
-//        dd("op");
-//        $expld_menu = explode(';', $menus->nama_menu);
+        $temp   = Undangan::find($form->template_id);
+        $gallery= Gallery::where('form_id', $form->id)->get();
         $ucapan = Ucapan::all();
+        $menu   = DB::table('users')->select('users.name', 'p.nama_paket', 'm.nama_menu', 'm.slug', 'm.icon')
+                    ->join('paket as p', 'users.id_paket', '=', 'p.id')
+                    ->join('akses_menus as a', 'a.paket_id', '=', 'p.id')
+                    ->join('menu_template as m', 'm.id', '=', 'a.menu_id')
+                    ->where('users.id', '=' , $form->id_user)->orderBy('m.id')->get();
 
-        $gallery = Gallery::where('form_id', $form->id)->get();
+//        dd($menu);
         if ($form->is_create == 0 ){
             return redirect('form')->with(['error' => 'Kamu belum buat undangan, buat dulu yuk ..']);
+        }else{
+            return view($temp->slug, ['form' => $form, 'temp' => $temp, 'ucapan' => $ucapan, 'gallery' => $gallery, 'menu' => $menu]);
         }
-        $temp = Undangan::find($form->template_id);
-//        dd($temp->slug);
-        return view($temp->slug, ['form' => $form, 'temp' => $temp, 'ucapan' => $ucapan, 'gallery' => $gallery, 'menu' => $menu_temp]);
     }
 
     /**

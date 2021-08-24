@@ -36,6 +36,19 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="template_id">Pilih Template</label>
+                    <select name="template_id" id="" class="form-control" required>
+                        <option value="">Pilih ..</option>
+                        <option value="1">Calm</option>
+                        <option value="2">Autumn</option>
+                        {{--                        <option value="3" style="cursor: not-allowed;"><del>Pro</del></option>--}}
+                    </select>
+                    <div class="invalid-feedback">
+                        Your email is invalid
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="password">{{ __('Password') }}</label>
 
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">

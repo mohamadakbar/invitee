@@ -41,11 +41,12 @@ Route::get('/demo2/', 'TemplateController@template2')->name('template2');
 Route::get('users', 'UserController@index')->name('users');
 Route::get('users/{slug}/edit', 'UserController@edit');
 Route::post('users/{slug}', 'UserController@update')->name('users.update');
+Route::post('/users/del/{email}', 'UserController@destroy')->name('users.destroy');
 
 // PAKET
 Route::get('paket', 'PaketController@index')->name('paket');
-//Route::post('paket', 'PaketController@index')->name('paket.delete');
-//Route::get('paket', 'PaketController@index')->name('paket.edit');
+Route::get('paket/{id}/edit', 'PaketController@edit')->name('paket.edit');
+Route::post('paket', 'PaketController@update')->name('paket.update');
 //Route::post('paket', 'PaketController@index')->name('paket.store');
 
 // Menu

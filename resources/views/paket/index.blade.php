@@ -1,8 +1,13 @@
 @extends('layouts.admin')
 
 @section('content')
-
     <div class="col-md-6 col-sm-6 ">
+        @if ($message = Session::get('message'))
+            <div class="alert alert-success" id="floating_alert">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
         <div class="x_panel">
             <div class="x_title">
                 <h2><small>Daftar Paket</small></h2>
@@ -31,8 +36,8 @@
                                     <tr>
                                         <td width="10">{{ $no+1 }}</td>
                                         <td>{{ $pkt->nama_paket }}</td>
-                                        <td width="150">
-                                            <a href="/users/{{ $pkt->slug }}/edit" class="btn btn-sm btn-success">Edit</a>
+                                        <td width="250">
+                                            <a href="/paket/{{ $pkt->slug }}/edit" class="btn btn-sm btn-success">Edit</a>
                                             <a href="/delete/{{ $pkt->slug }}" class="btn btn-sm btn-danger">Delete</a>
                                         </td>
                                     </tr>

@@ -34,14 +34,16 @@ class UndanganController extends Controller
 
         $temp   = Undangan::find($form->template_id);
         $gallery= Gallery::where('form_id', $form->id)->get();
-        $ucapan = Ucapan::all();
+        $ucapan = DB::table('ucapan')->select('ucapan.id', 'ucapan.nama', 'ucapan.slug', 'ucapan.ucapan', 'ucapan.created_at')
+                    ->join('form as f', 'f.slug', '=', 'ucapan.slug')
+                    ->where('ucapan.slug', $form->slug)->orderBy('id', 'desc')->get();
+
         $menu   = DB::table('users')->select('users.name', 'p.nama_paket', 'm.nama_menu', 'm.slug', 'm.icon')
                     ->join('paket as p', 'users.id_paket', '=', 'p.id')
                     ->join('akses_menus as a', 'a.paket_id', '=', 'p.id')
                     ->join('menu_template as m', 'm.id', '=', 'a.menu_id')
                     ->where('users.id', '=' , $form->id_user)->orderBy('m.id')->get();
 
-//        dd($menu);
         if ($form->is_create == 0 ){
             return redirect('form')->with(['error' => 'Kamu belum buat undangan, buat dulu yuk ..']);
         }else{

@@ -133,7 +133,7 @@
                 @if($menus->slug != 'count')
                     <div class="mobile-bottom-nav__item mobile-bottom-nav__item--active">
                         <div class="mobile-bottom-nav__item-content">
-                            <a href="#{{ $menus->slug }}">{!! $menus->icon !!}<br>{{ $menus->nama_menu }}</a>
+                            <a href="#{{ $menus->slug }}" onClick="removehash()">{!! $menus->icon !!}<br>{{ $menus->nama_menu }} </a>
                         </div>
                     </div>
                 @endif
@@ -146,29 +146,26 @@
 <main id="main">
 
     @foreach($menu as $pages)
-        @include('undangan.content.'.$pages->slug)
+        @include('undangan.content.satu.'.$pages->slug)
     @endforeach
 
-
-
-
-{{--    <section id="protocol" class="why-us">--}}
-{{--        <div class="container" data-aos="fade-up">--}}
-{{--            <div class="section-title text-center">--}}
-{{--                <h1>Himbauan</h1>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        <div class="container-fluid col-lg-8 col-md-6" data-aos="fade-up" data-aos-delay="100">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-12">--}}
-{{--                    <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">--}}
-{{--                        <p style="font-size: 25px; font-family: 'Patrick Hand', cursive; color: #cda45e">Dalam rangka mencegah penularan <strong>Covid-19</strong>, dimohon untuk dapat melaksanakan protokol kesehatan. Dengan tetap menggunakan masker, menjaga jarak dan mencuci tangan.</p>--}}
-{{--                        <img src="{{ asset('/frontend/template/img/protocol.png') }}" alt="">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
+    <section id="protocol" class="why-us">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title text-center">
+                <h1>Himbauan</h1>
+            </div>
+        </div>
+        <div class="container-fluid col-lg-8 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
+                        <p style="font-size: 25px; font-family: 'Patrick Hand', cursive; color: #cda45e">Dalam rangka mencegah penularan <strong>Covid-19</strong>, dimohon untuk dapat melaksanakan protokol kesehatan. Dengan tetap menggunakan masker, menjaga jarak dan mencuci tangan.</p>
+                        <img src="{{ asset('/frontend/template/img/protocol.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="end" class="end">
         <div class="container-fluid col-lg-8 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -195,7 +192,9 @@
 
     <!-- Vendor JS Files -->
 
+</main>
 </body>
+
 <script src="{{ asset('/frontend/template/')}}/vendor/aos/aos.js"></script>
 <script src="{{ asset('/frontend/template/')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('/frontend/template/')}}/vendor/glightbox/js/glightbox.min.js"></script>
@@ -211,6 +210,13 @@
 {{--        document.getElementById("audio").play();--}}
 {{--    }--}}
 {{--</script>--}}
+<script>
+    function removehash(){
+        setTimeout(function(){
+            history.replaceState("", document.title, window.location.pathname);
+        }, 1);
+    }
+</script>
 <script>
     (function () {
         const second = 1000,

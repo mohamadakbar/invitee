@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Template extends Model
 {
     protected $table = 'template';
-    protected $fillable = ['id', 'name_template', 'slug'];
-    public $timestamps = false;
+    protected $fillable = ['nama_template', 'slug'];
 
-    public function form(){
-        return $this->hasMany('App\Model\Form');
+    public function user()
+    {
+        return $this->hasMany('App\Model\Template', 'template_id');
     }
 }

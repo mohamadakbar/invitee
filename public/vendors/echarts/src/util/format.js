@@ -65,7 +65,7 @@ define(function (require) {
         return '{' + varName + (seriesIdx == null ? '' : seriesIdx) + '}';
     }
     /**
-     * Template formatter
+     * Undangan formatter
      * @param  {string} tpl
      * @param  {Array.<Object>|Object} paramsList
      * @return {string}

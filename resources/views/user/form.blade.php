@@ -38,20 +38,24 @@
             {{ $message }}
         </div>
         @enderror
-{{--        <input id="middle-name" class="form-control" type="text" name="middle-name" value="{{ isset($user) ? $user->paket->nama_paket : '' }}">--}}
     </div>
 </div>
 
-{{--<div class="item form-group">--}}
-{{--    <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Role</label>--}}
-{{--    <div class="col-md-6 col-sm-6 ">--}}
-{{--        <select name="role" id="heard" class="form-control" required>--}}
-{{--            <option value="">Choose..</option>--}}
-{{--            <option value="0">Active</option>--}}
-{{--            <option value="1">Not Active</option>--}}
-{{--        </select>--}}
-{{--    </div>--}}
-{{--</div>--}}
+<div class="item form-group">
+    <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Template</label>
+    <div class="col-md-6 col-sm-6 ">
+        <select name="template_id" id="heard" class="form-control @error('template_id') is-invalid @enderror">
+            <option value="">Choose..</option>
+            <option value="1" {{ $user->template['id'] == 1 ? 'selected' : '' }}>Calm</option>
+            <option value="2" {{ $user->template['id'] == 2 ? 'selected' : '' }}>Autumn</option>
+        </select>
+        @error('template_id')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
+    </div>
+</div>
 
 <div class="item form-group">
     <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Status</label>

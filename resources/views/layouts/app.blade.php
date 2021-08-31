@@ -5,7 +5,7 @@
     <title>Eatery Cafe and Restaurant Template</title>
     <!--
 
-    Eatery Cafe Template
+    Eatery Cafe Undangan
 
     http://www.templatemo.com/tm-515-eatery
 

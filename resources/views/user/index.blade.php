@@ -9,7 +9,6 @@
         </div>
     @endif
 
-    {{--{{ dd(Session::get('success')) }}--}}
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block" id="floating_alert">
             <button type="button" class="close" data-dismiss="alert">×</button>
@@ -24,13 +23,6 @@
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
-{{--                    <li class="dropdown">--}}
-{{--                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>--}}
-{{--                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">--}}
-{{--                            <a class="dropdown-item" href="#">Settings 1</a>--}}
-{{--                            <a class="dropdown-item" href="#">Settings 2</a>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
                 </ul>
@@ -52,6 +44,7 @@
                                         <th>Diubah</th>
                                         <th>Paket</th>
                                         <th>Role</th>
+                                        <th>Template ID</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -65,9 +58,13 @@
                                         <td>{{ $user->updated_at }}</td>
                                         <td>{{ $user->paket->nama_paket }}</td>
                                         <td>{{ $user->role->name }}</td>
+                                        <td>{{ $user->template['nama_template'] }}</td>
                                         <td>
+                                            <form action="{{ route('users.destroy', ['email' => $user->email]) }}" method="post">
                                             <a href="/users/{{ $user->slug }}/edit" class="btn btn-sm btn-success">Edit</a>
-                                            <a href="/delete/{{ $user->slug }}" class="btn btn-sm btn-danger">Delete</a>
+                                                @csrf
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                     @endforeach

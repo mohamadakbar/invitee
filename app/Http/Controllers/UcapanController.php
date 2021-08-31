@@ -11,6 +11,10 @@ use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Input;
 class UcapanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -48,12 +52,13 @@ class UcapanController extends Controller
      */
     public function store(Request $request)
     {
+//        $token  = $_POST['g-recaptcha-response']; // pake post php
         $nama   = $request->nama;
         $ucapan = $request->ucapan;
-        $token  = $request->token;
+        $token  = $request->token; // pake post js
         $slug   = $request->slug;
 
-        if ($token || $nama || $ucapan){
+        if ($token || $nama || $ucapan || $slug){
             $client     = new Client();
             $response   = $client->post('https://www.google.com/recaptcha/api/siteverify', [
                 'form_params' => [

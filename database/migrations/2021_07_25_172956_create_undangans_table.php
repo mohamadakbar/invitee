@@ -13,7 +13,7 @@ class CreateUndangansTable extends Migration
      */
     public function up()
     {
-        Schema::create('template', function (Blueprint $table) {
+        Schema::create('undangan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama_template');
             $table->string('slug');

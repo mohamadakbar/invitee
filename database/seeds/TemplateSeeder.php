@@ -11,13 +11,13 @@ class TemplateSeeder extends Seeder
      */
     public function run()
     {
-        \App\Model\Template::create([
+        \App\Model\Undangan::create([
             'id'    => 1,
             'nama_template' => 'traditional',
             'slug'  => 'undangan.dua'
         ]);
 
-        \App\Model\Template::create([
+        \App\Model\Undangan::create([
             'id'    => 2,
             'nama_template' => 'love',
             'slug'  => 'undangan.satu'

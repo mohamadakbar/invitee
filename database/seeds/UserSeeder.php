@@ -21,18 +21,20 @@ class UserSeeder extends Seeder
             "is_new" => 1,
             "id_paket" => 3,
             "roles" => 2,
+            "template_id" => 1,
             "remember_token" => null,
         ]);
 
         User::create([
             "slug" => "administrator",
             "name" => "Administrator",
-            "is_new" => 1,
-            "id_paket" => 3,
-            "roles" => 1,
             "email" => "administrator@mail.com",
             "email_verified_at" => null,
             "password" => bcrypt('admin123'),
+            "is_new" => 1,
+            "id_paket" => 3,
+            "roles" => 1,
+            "template_id" => 1,
             "remember_token" => null,
         ]);
     }

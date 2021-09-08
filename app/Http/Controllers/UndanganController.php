@@ -30,8 +30,10 @@ class UndanganController extends Controller
         $form   = Form::select('*')
                 ->where('nama_panggilan_p', $pria)
                 ->where('nama_panggilan_w', $wanita)
-                ->where('is_active', 1)
-                ->firstOrFail();
+//                ->where('is_active', 0)
+                ->first();
+
+//        dd($form->is_active);
 
         $temp   = Undangan::find($form->template_id);
         $gallery= Gallery::where('form_id', $form->id)->get();
@@ -44,6 +46,10 @@ class UndanganController extends Controller
                     ->join('akses_menus as a', 'a.paket_id', '=', 'p.id')
                     ->join('menu_template as m', 'm.id', '=', 'a.menu_id')
                     ->where('users.id', '=' , $form->id_user)->orderBy('m.id')->get();
+
+        if ($form->is_active == 0){
+            return view('undangan.expired');
+        }
 
         if ($form->is_create == 0 ){
             return redirect('form')->with(['error' => 'Kamu belum buat undangan, buat dulu yuk ..']);

@@ -23,9 +23,124 @@
     <link rel="stylesheet" href="{{ asset('frontend/web/css') }}/owl.carousel.css">
     <link rel="stylesheet" href="{{ asset('frontend/web/css') }}/owl.theme.default.min.css">
     <link rel="stylesheet" href="{{ asset('frontend/web/css') }}/magnific-popup.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('frontend/web/css') }}/templatemo-style.css">
+    <style>
+        .float{
+            position:fixed;
+            width:60px;
+            height:60px;
+            bottom:40px;
+            right:40px;
+            background-color:#25d366;
+            color:#FFF;
+            border-radius:50px;
+            text-align:center;
+            font-size:30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index:100;
+        }
+
+        .my-float{
+            margin-top:16px;
+        }
+
+        /* Font */
+        @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+        /* Design */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+
+        .btn {
+            color: #757575;
+            padding: 0.8rem;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            font-weight: 400;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+            border: 1px solid #999999;
+            background: transparent;
+        }
+
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cards_item {
+            display: flex;
+            padding: 1rem;
+        }
+
+        @media (min-width: 40rem) {
+            .cards_item {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 56rem) {
+            .cards_item {
+                width: 33.3333%;
+            }
+        }
+
+        .card {
+            background-color: white;
+            width: 27em;
+            border-radius: 0.90rem;
+            box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card_content {
+            width: 100%;
+            padding: 2rem;
+            /*background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);*/
+        }
+
+        .card_title {
+            color: #757575;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: capitalize;
+            margin: 0px;
+        }
+
+        .card_text {
+            float: left;
+            color: #757575;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            font-weight: 400;
+        }
+        .made_by{
+            font-weight: 400;
+            font-size: 13px;
+            margin-top: 35px;
+            text-align: center;
+        }
+    </style>
 
 </head>
 <body>
@@ -58,10 +173,10 @@
         <!-- MENU LINKS -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-nav-first">
-                <li><a href="#home" class="smoothScroll">Home</a></li>
-                <li><a href="#about" class="smoothScroll">About</a></li>
-                <li><a href="#team" class="smoothScroll">Chef</a></li>
-                <li><a href="#menu" class="smoothScroll">Menu</a></li>
+                <!--<li><a href="#home" class="smoothScroll">Home</a></li>-->
+                <li><a href="#about" class="smoothScroll">Home</a></li>
+                <li><a href="#team" class="smoothScroll">Harga</a></li>
+                <li><a href="#menu" class="smoothScroll">Template</a></li>
                 <li><a href="#contact" class="smoothScroll">Contact</a></li>
             </ul>
 
@@ -130,12 +245,12 @@
                 <div class="about-info">
                     <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
                         <h4>Read our story</h4>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <h2>Undangan Pernikahan di Weinvitee</h2>
                     </div>
 
                     <div class="wow fadeInUp" data-wow-delay="0.4s">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor, orci non auctor ornare, justo erat elementum nisi, sit amet gravida erat lorem ut diam. Vestibulum bibendum lorem sit libero.</p>
-                        <p>Sed elementum vel felis sed scelerisque. In arcu diam, sollicitudin eu nibh ac, posuere tristique magna. You can use this template for your cafe or restaurant website. Please tell your friends about <a href="https://plus.google.com/+templatemo" target="_parent">templatemo</a>. Thank you.</p>
+                        <p>Sudah beberapa tahun ini kita fokus pada undangan online, melihat dari segi informasi yang sekarang makin pesat, kita hadir untuk memudahkan kamu mengundang teman teman kamu lewat weinvitee.my.id,</p>
+                        <p> dan yang ngga kalah penting, undangan pernikahan yang kita sediakan disini bisa menghemat budget kamu juga lhoo ...</p>
                     </div>
                 </div>
             </div>
@@ -150,8 +265,139 @@
     </div>
 </section>
 
-<!-- PAKET -->
 <section id="team" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            {{--            <div class="col-md-12 col-sm-12">--}}
+            {{--                <div class="section-title wow fadeInUp" data-wow-delay="0.1s">--}}
+            {{--                    <h2>Harga Undangan</h2>--}}
+            {{--                    <!-- <h4>They are nice &amp; friendly</h4> -->--}}
+            {{--                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat provident tempore nemo dignissimos tempora, cumque ipsam animi saepe qui.</h4>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+
+            <div>
+                <h2>Harga Undangan</h2>
+                <!--<h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat provident tempore nemo dignissimos tempora, cumque ipsam animi saepe qui.</h4>-->
+                <ul class="cards">
+
+                    <li class="cards_item">
+                        <div class="card">
+                            {{--                            <div class="card_image"></div>--}}
+                            <div class="card_content">
+                                <h1 class="card_title">Free</h1>
+                                <h3>-</h3>
+                                {{--                                <span class="badge badge-success">Paling diminati</span><br><br>--}}
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Background music &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Utama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Couple &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                {{--                                    <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Event &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
+                                {{--                                    <p class="card_text"> <i class="fa fa-check-circle"></i> Google maps &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
+                                {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Gallery &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
+                                {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Hitung Mundur Waktu Acara &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
+                                {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Ucapan dan doa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Masa Aktif 1 Minggu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <button class="btn card_btn"><a href="{{ route('register') }}">Daftar Sekarang</a></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="cards_item">
+                        <div class="card" style="background-image: linear-gradient(to right, white , #00e2a1)">
+                            {{--                            <div class="card_image"></div>--}}
+                            <div class="card_content">
+                                <h1 class="card_title">Rp. 55.000</h1>
+                                <h3>Entry</h3>
+                                {{--                                <span class="badge badge-success">Paling diminati</span><br><br>--}}
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Background music &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Utama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Couple &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Event &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Google maps &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Gallery &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
+                                {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Hitung Mundur Waktu Acara &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
+                                {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Ucapan dan doa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Masa Aktif 1 Bulan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <button class="btn card_btn"><a href="https://api.whatsapp.com/send?phone=6289680090856&text=Hallo%20,%20Saya%20mau%20tanya%20tentang%20undangan%20online%20di%20weinvitee.my.id." target="_blank">Contact Admin</a></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="cards_item">
+                        <div class="card" style="background-image: linear-gradient(to right, white , #00bae2)">
+                            {{--                            <div class="card_image"></div>--}}
+                            <div class="card_content">
+                                <h1 class="card_title">Rp. 80.000</h1>
+                                <h3>Pro</h3>
+                                <span class="badge badge-success">Paling diminati</span><br><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Background music &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Utama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Couple &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Halaman Event &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Google maps &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Gallery &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Hitung Mundur Waktu Acara &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Ucapan dan doa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Masa Aktif 6 Bulan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <button class="btn card_btn"><a href="https://api.whatsapp.com/send?phone=6289680090856&text=Hallo%20,%20Saya%20mau%20tanya%20tentang%20undangan%20online%20di%20weinvitee.my.id." target="_blank">Contact Admin</a></button>
+                            </div>
+                        </div>
+                    </li>
+
+                    {{--                    <li class="cards_item">--}}
+                    {{--                        <div class="card">--}}
+                    {{--                            --}}{{--                            <div class="card_image"></div>--}}
+                    {{--                            <div class="card_content">--}}
+                    {{--                                <h1 class="card_title">Card Grid Layout</h1>--}}
+                    {{--                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>--}}
+                    {{--                                <button class="btn card_btn">Read More</button>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </li>--}}
+
+                    {{--                    <li class="cards_item">--}}
+                    {{--                        <div class="card">--}}
+                    {{--                            --}}{{--                            <div class="card_image"></div>--}}
+                    {{--                            <div class="card_content">--}}
+                    {{--                                <h1 class="card_title">Card Grid Layout</h1>--}}
+                    {{--                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>--}}
+                    {{--                                <button class="btn card_btn">Read More</button>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </li>--}}
+                    {{--                    --}}
+                    {{--                    <li class="cards_item">--}}
+                    {{--                        <div class="card">--}}
+                    {{--                            <div class="card_image"><img src="https://picsum.photos/500/300/?image=5"></div>--}}
+                    {{--                            <div class="card_content">--}}
+                    {{--                                <h2 class="card_title">Card Grid Layout</h2>--}}
+                    {{--                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>--}}
+                    {{--                                <button class="btn card_btn">Read More</button>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </li>--}}
+                    {{--                    <li class="cards_item">--}}
+                    {{--                        <div class="card">--}}
+                    {{--                            <div class="card_image"><img src="https://picsum.photos/500/300/?image=11"></div>--}}
+                    {{--                            <div class="card_content">--}}
+                    {{--                                <h2 class="card_title">Card Grid Layout</h2>--}}
+                    {{--                                <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>--}}
+                    {{--                                <button class="btn card_btn">Read More</button>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </li>--}}
+
+                </ul>
+            </div>
+
+            {{--            <h3 class="made_by">Made with ♡</h3>--}}
+        </div>
+    </div>
+</section>
+
+<!-- PAKET -->
+<section id="menu" data-stellar-background-ratio="0.5">
     <div class="container">
         <div class="row">
 
@@ -159,7 +405,7 @@
                 <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                     <h2>Template Undangan kami</h2>
                     <!-- <h4>They are nice &amp; friendly</h4> -->
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat provident tempore nemo dignissimos tempora, cumque ipsam animi saepe qui.</h4>
+                    <h4>Berikut ini contoh undangan yang kita punya, di cek dulu yaa, siapa tau suka ..</h4>
                 </div>
             </div>
 
@@ -175,25 +421,24 @@
                 </div>
             </div>
 
-{{--            <div class="col-md-6 col-sm-8">--}}
-{{--                <div class="footer-info footer-open-hour">--}}
-{{--                    <div class="section-title">--}}
-{{--                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>--}}
-{{--                    </div>--}}
-{{--                    <div class="wow fadeInUp" data-wow-delay="0.4s">--}}
-{{--                        <p>Monday: Closed</p>--}}
-{{--                        <div>--}}
-{{--                            <strong>Tuesday to Friday</strong>--}}
-{{--                            <p>7:00 AM - 9:00 PM</p>--}}
-{{--                        </div>--}}
-{{--                        <div>--}}
-{{--                            <strong>Saturday - Sunday</strong>--}}
-{{--                            <p>11:00 AM - 10:00 PM</p>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
+            {{--            <div class="col-md-6 col-sm-8">--}}
+            {{--                <div class="footer-info footer-open-hour">--}}
+            {{--                    <div class="section-title">--}}
+            {{--                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Open Hours</h2>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="wow fadeInUp" data-wow-delay="0.4s">--}}
+            {{--                        <p>Monday: Closed</p>--}}
+            {{--                        <div>--}}
+            {{--                            <strong>Tuesday to Friday</strong>--}}
+            {{--                            <p>7:00 AM - 9:00 PM</p>--}}
+            {{--                        </div>--}}
+            {{--                        <div>--}}
+            {{--                            <strong>Saturday - Sunday</strong>--}}
+            {{--                            <p>11:00 AM - 10:00 PM</p>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
         </div>
     </div>
 </section>
@@ -257,7 +502,8 @@
             -->
             <div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="0.4s">
                 <div id="google-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" allowfullscreen></iframe>
+                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" allowfullscreen></iframe>-->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d416.9028317217727!2d106.69894396882168!3d-6.228022401961628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fa226e02b2d3%3A0x8570bf85af99ea45!2sJl.%20Griya%20Kencana%201%20No.1B%2C%20RT.002%2FRW.001%2C%20Sudimara%20Sel.%2C%20Kec.%20Ciledug%2C%20Kota%20Tangerang%2C%20Banten%2015151!5e0!3m2!1sid!2sid!4v1631042242923!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
 
@@ -270,7 +516,7 @@
                 </div>
 
                 <!-- CONTACT FORM -->
-                <form action="#" method="post" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
+                <form action="" class="wow fadeInUp" id="contact-form" role="form" data-wow-delay="0.8s">
 
                     <!-- IF MAIL SENT SUCCESSFUL  // connect this with custom JS -->
                     <h6 class="text-success">Your message has been sent successfully.</h6>
@@ -299,7 +545,9 @@
         </div>
     </div>
 </section>
-
+<a href="https://api.whatsapp.com/send?phone=6289680090856&text=Hallo%20,%20Saya%20mau%20tanya%20tentang%20undangan%20online%20di%20weinvitee.my.id." class="float" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+</a>
 
 <!-- FOOTER -->
 <footer id="footer" data-stellar-background-ratio="0.5">
@@ -312,7 +560,7 @@
                         <h2 class="wow fadeInUp" data-wow-delay="0.2s">Find us</h2>
                     </div>
                     <address class="wow fadeInUp" data-wow-delay="0.4s">
-                        <p>123 nulla a cursus rhoncus,<br> augue sem viverra 10870<br>id ultricies sapien</p>
+                        <p>Jl. Kp Dukuh RT01/02 No 5, Cieldug, Kota Tangerang</p>
                     </address>
                 </div>
             </div>
@@ -320,12 +568,12 @@
             <div class="col-md-3 col-sm-8">
                 <div class="footer-info">
                     <div class="section-title">
-                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Reservation</h2>
+                        <h2 class="wow fadeInUp" data-wow-delay="0.2s">Contact</h2>
                     </div>
                     <address class="wow fadeInUp" data-wow-delay="0.4s">
-                        <p>090-080-0650 | 090-070-0430</p>
-                        <p><a href="mailto:info@company.com">info@company.com</a></p>
-                        <p>LINE: eatery247 </p>
+                        <p>089680090856</p>
+                        <p><a href="mailto:info@company.com">info@weinvitee.my.id</a></p>
+                        <!--<p>Telegram :  </p>-->
                     </address>
                 </div>
             </div>
@@ -339,7 +587,7 @@
                 </ul>
 
                 <div class="wow fadeInUp copyright-text" data-wow-delay="0.8s">
-                    <p><br>Copyright &copy; 2018 <br>Your Company Name
+                    <p><br>Copyright &copy; 2021 <br>Weinvitee
 
                         <br><br>Design: <a rel="nofollow" href="http://templatemo.com" target="_parent">TemplateMo</a></p>
                 </div>

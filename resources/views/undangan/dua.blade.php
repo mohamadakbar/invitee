@@ -290,7 +290,7 @@
             },
             success:function(response){
                 if(response.success){
-                    $(".s").val(''); // reset text area
+                    $(".ucapan_textarea").val(''); // reset text area
                     grecaptcha.reset(); // reset recaptcha
                     $("#ucapan").load(" #ucapan"); // reload ucapan div
 

@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="col-lg-5">
-                    <img src="{{ asset('/upload_img/')}}/{{ $form->foto_w }}" class="img-fluid" alt="" style="float: left">
+                    <img src="{{ asset('/upload_img/')}}/{{ $form->foto_p }}" class="img-fluid" alt="" style="float: left">
                     <p class="fst-italic" style="font-size: 13px"><h3 class="text-center">{{ ucfirst($form->nama_lengkap_p) }}</h3> <h5 class="text-center"> Putera dari Bapak {{ $form->nama_ortu_p_p }} dan Ibu {{ $form->nama_ortu_p_w }}</h5></p>
                 </div>
             </div>

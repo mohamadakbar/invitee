@@ -11,7 +11,7 @@
 {{--                        <input type="text" value="{{ $form->slug }}" placeholder="Name" name="name" tabindex="1"/>--}}
                         <input type="text" name="nama" disabled class="form-control" id="name" value="{{ $param }}">
                         <input type="hidden" name="slug" class="form-control" id="slug" value="{{ $form->slug }}">
-                        <textarea placeholder="Message" name="ucapan" tabindex="5" rows="10"></textarea>
+                        <textarea placeholder="Message" name="ucapan" class="ucapan_textarea" tabindex="5" rows="10"></textarea>
                         <center><div class="g-recaptcha mt-2" data-sitekey="{{ env('NOCAPTCHA_SITEKEY') }}"></div></center>
                         <br>
                         <button type="submit" class="btn btn-primary btn-sm mt-3">Post Comment</button>

@@ -29,6 +29,7 @@ class Form extends Authenticatable
         'alamat_akad',
         'alamat_res',
         'is_create',
+        'is_active',
         'status_und',
         'nama_ortu_p_p',
         'nama_ortu_p_w',

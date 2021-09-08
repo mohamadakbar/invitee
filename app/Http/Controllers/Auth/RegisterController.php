@@ -86,6 +86,7 @@ class RegisterController extends Controller
         return Form::create([
             'id_user'       => $insert_id,
             'is_create'     => 0,
+            'is_active'     => 1, // true
             'template_id' => $data['template_id'],
         ]);
 

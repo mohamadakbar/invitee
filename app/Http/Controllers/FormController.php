@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\Form;
 use App\Model\Gallery;
 use App\Model\Undangan;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -143,6 +144,10 @@ class FormController extends Controller
         $form->nama_ortu_w_w     = $request->nama_ortu_w_w;
         $form->link_loc          = $request->link_loc;
 
+        $user = User::where('id', $request->id_user)->first();
+        $user->is_new   = 1;
+        $user->save();
+
         $save = $form->save();
         if ($save){
             return redirect('form');
@@ -276,6 +281,10 @@ class FormController extends Controller
         $form->nama_ortu_w_w     = $request->nama_ortu_w_w;
         $form->link_loc          = $request->link_loc;
         $form->status_und        = $request->status_und;
+
+        $user = User::where('id', $request->id_user)->first();
+        $user->is_new   = 1;
+        $user->save();
 
         $save = $form->save();
         if ($save){

@@ -297,7 +297,7 @@
                                 {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Gallery &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
                                 {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Hitung Mundur Waktu Acara &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
                                 {{--                                <p class="card_text"> <i class="fa fa-check-circle"></i> Ucapan dan doa &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>--}}
-                                <p class="card_text"> <i class="fa fa-check-circle"></i> Masa Aktif 1 Minggu &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
+                                <p class="card_text"> <i class="fa fa-check-circle"></i> Masa Aktif 3 Hari &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><br>
                                 <button class="btn card_btn"><a href="{{ route('register') }}">Daftar Sekarang</a></button>
                             </div>
                         </div>

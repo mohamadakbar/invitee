@@ -2,7 +2,10 @@
 
 namespace App\Console\Commands;
 
+use App\Model\Form;
 use Illuminate\Console\Command;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class StatusCron extends Command
 {
@@ -44,6 +47,53 @@ class StatusCron extends Command
            Item::create(['name'=>'hello new']);
         */
 
-        $this->info('Demo:Cron Cummand Run successfully!');
+//        $free   = Form::where('is_create', 1)->where('')->where('created_at', '<=', Carbon::now()->subDays(7)->toDateTimeString())->get();
+//        $entry  = Form::where('is_create', 1)->where('created_at', '<=', Carbon::now()->subMonths(1)->toDateTimeString())->get();
+//        $pro    = Form::where('is_create', 1)->where('created_at', '<=', Carbon::now()->subDays(6)->toDateTimeString())->get();
+
+
+        $free = DB::table('form')->select('form.id', 'form.id_user', 'form.is_active', 'form.is_create', 'form.created_at')
+                ->join('users', 'users.id', '=', 'form.id_user')
+                ->where('users.id_paket', '=', 1)
+                ->where('form.is_create', '=', 1)
+                ->where('form.created_at', '<=', Carbon::now()->subDays(7)->toDateTimeString())
+                ->update(['form.is_active' => 0]);
+
+        if ($free != 0){
+            $this->info('Cron Update Status Account Free: Command for free account successfully!');
+        }
+
+        $entry = DB::table('form')->select('form.id', 'form.id_user', 'form.is_active', 'form.is_create', 'form.created_at')
+            ->join('users', 'users.id', '=', 'form.id_user')
+            ->where('users.id_paket', '=', 2)
+            ->where('form.is_create', '=', 1)
+            ->where('form.created_at', '<=', Carbon::now()->subMonths(1)->toDateTimeString())
+            ->update(['form.is_active' => 0]);
+
+        if ($entry != 0){
+            $this->info('Cron Update Status Account Entry : Command for entry account run successfully!');
+        }
+
+        $pro = DB::table('form')->select('form.id', 'form.id_user', 'form.is_active', 'form.is_create', 'form.created_at')
+            ->join('users', 'users.id', '=', 'form.id_user')
+            ->where('users.id_paket', '=', 3)
+            ->where('form.is_create', '=', 1)
+            ->where('form.created_at', '<=', Carbon::now()->subMonths(6)->toDateTimeString())
+            ->update(['form.is_active' => 0]);
+
+        if ($pro != 0){
+            $this->info('Cron Update Status Account : Command for pro account successfully!');
+        }
+
+//        foreach($free as $qFree){
+////            $qFree->is_active = 1;
+////            $qFree->update([$qFree->is_active => 1]);
+//            $this->info($qFree->id);
+//            fre
+//        }
+
+//            $this->info($free);
+
+//        $this->info('Demo:Cron Cummand Run successfully!');
     }
 }

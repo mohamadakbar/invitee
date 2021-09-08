@@ -48,6 +48,7 @@ class UserController extends Controller
         // update form table
         $form = Form::where('id_user', $user->id)->first();
         $form->template_id = $request->template_id;
+        $form->is_active = $request->status;
 
         $form->save();
         $save = $user->save();

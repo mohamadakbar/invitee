@@ -30,7 +30,8 @@ class UndanganController extends Controller
         $form   = Form::select('*')
                 ->where('nama_panggilan_p', $pria)
                 ->where('nama_panggilan_w', $wanita)
-                ->first();
+                ->where('is_active', 1)
+                ->firstOrFail();
 
         $temp   = Undangan::find($form->template_id);
         $gallery= Gallery::where('form_id', $form->id)->get();

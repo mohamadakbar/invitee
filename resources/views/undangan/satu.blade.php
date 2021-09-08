@@ -29,11 +29,11 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Undangan Main CSS File -->
-    <link href="{{ asset('/frontend/template/')}}/css/style1.css?v=1.0.1" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/css/style1.css?v=1.0.8" rel="stylesheet">
     <style>
         .modal-content {
             background-size: 50%;
-            height: 400px;
+            height: 500px;
             background-image: url({{ asset('/frontend/template/img/border-corner2.png') }}), url({{ asset('/frontend/template/img/border-corner-bottom.png') }});
             background-position: top right, bottom left;
             background-repeat: no-repeat, no-repeat;
@@ -92,7 +92,7 @@
         <div class="modal-content">
             <div class="container" data-aos="fade-up">
                 <div class="d-flex justify-content-center m-1">
-                    <img src="{{ asset('/frontend/template/img/cover-dpn.jpg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
+                    <img src="{{ asset('/frontend/template/img/cvr-dpn.jpeg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
                 </div>
                 <div class="d-flex justify-content-center m-1" style="font-family: Courgette">
                     Kepada Yth:
@@ -121,12 +121,12 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top d-flex align-items-cente">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
-{{--        <h1 class="logo me-auto me-lg-0">--}}
-{{--            <a href="index.html">--}}
-{{--                Invitation--}}
-{{--            </a>--}}
-{{--        </h1>--}}
-        <!-- Uncomment below if you prefer to use an image logo -->
+    {{--        <h1 class="logo me-auto me-lg-0">--}}
+    {{--            <a href="index.html">--}}
+    {{--                Invitation--}}
+    {{--            </a>--}}
+    {{--        </h1>--}}
+    <!-- Uncomment below if you prefer to use an image logo -->
 
         <nav class="mobile-bottom-nav">
             @foreach($menu as $menus)
@@ -183,7 +183,7 @@
 
     <div id="preloader"></div>
     <audio id="audio">
-        <source src="{{ asset('/frontend/template') }}/audio/audio.eg" type="audio/mpeg">
+        <source src="{{ asset('/frontend/template') }}/audio/audio.mpeg" type="audio/mpeg">
     </audio>
     <a class="back-to-top d-flex align-items-center justify-content-center" id="playPauseBTN" onclick="playPause()"><i class="bi bi-music-note"></i></a>
 

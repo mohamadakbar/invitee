@@ -28,11 +28,11 @@
     <link href="{{ asset('/frontend/template/')}}/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Undangan Main CSS File -->
-    <link href="{{ asset('/frontend/template/')}}/css/style2.css?v=1.0.1" rel="stylesheet">
+    <link href="{{ asset('/frontend/template/')}}/css/style2.css?v=1.0.8" rel="stylesheet">
     <style>
         .modal-content {
             background-size: 50%;
-            height: 400px;
+            height: 500px;
             background-image: url({{ asset('/frontend/template/img/border-corner2.png') }}), url({{ asset('/frontend/template/img/border-corner-bottom.png') }});
             background-position: top right, bottom left;
             background-repeat: no-repeat, no-repeat;
@@ -94,7 +94,7 @@
         <div class="modal-content">
             <div class="container" data-aos="fade-up">
                 <div class="d-flex justify-content-center m-1">
-                    <img src="{{ asset('/frontend/template/img/cover-dpn.jpg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
+                    <img src="{{ asset('/frontend/template/img/cvr-dpn.jpeg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
                 </div>
                 <div class="d-flex justify-content-center m-1" style="font-family: Courgette">
                     Kepada Yth:
@@ -180,7 +180,7 @@
 
     <div id="preloader"></div>
     <audio id="audio">
-        <source src="{{ asset('/frontend/template') }}/audio/audio.eg" type="audio/mpeg">
+        <source src="{{ asset('/frontend/template') }}/audio/audio.mpeg" type="audio/mpeg">
     </audio>
     <a class="back-to-top d-flex align-items-center justify-content-center" id="playPauseBTN" onclick="playPause()"><i class="bi bi-music-note"></i></a>
 

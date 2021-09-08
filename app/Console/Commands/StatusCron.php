@@ -56,11 +56,11 @@ class StatusCron extends Command
                 ->join('users', 'users.id', '=', 'form.id_user')
                 ->where('users.id_paket', '=', 1)
                 ->where('form.is_create', '=', 1)
-                ->where('form.created_at', '<=', Carbon::now()->subDays(7)->toDateTimeString())
+                ->where('form.created_at', '<=', Carbon::now()->subDays(3)->toDateTimeString())
                 ->update(['form.is_active' => 0]);
 
         if ($free != 0){
-            $this->info('Cron Update Status Account Free: Command for free account successfully!');
+            Log::info("Cron Update Status Account Free: Command for free account successfully!");
         }
 
         $entry = DB::table('form')->select('form.id', 'form.id_user', 'form.is_active', 'form.is_create', 'form.created_at')
@@ -71,7 +71,7 @@ class StatusCron extends Command
             ->update(['form.is_active' => 0]);
 
         if ($entry != 0){
-            $this->info('Cron Update Status Account Entry : Command for entry account run successfully!');
+            Log::info("Cron Update Status Account Free: Command for entry account successfully!");
         }
 
         $pro = DB::table('form')->select('form.id', 'form.id_user', 'form.is_active', 'form.is_create', 'form.created_at')
@@ -82,7 +82,7 @@ class StatusCron extends Command
             ->update(['form.is_active' => 0]);
 
         if ($pro != 0){
-            $this->info('Cron Update Status Account : Command for pro account successfully!');
+            Log::info("Cron Update Status Account Free: Command for pro account successfully!");
         }
 
 //        foreach($free as $qFree){

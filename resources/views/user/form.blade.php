@@ -73,6 +73,23 @@
 {{--        <input id="middle-name" class="form-control" type="text" name="middle-name" value="@if(isset($user)) {{ $user->is_new == 0 ? 'active' : 'not active'}} @endif">--}}
     </div>
 </div>
+{{--{{ dd($form) }}--}}
+<div class="item form-group">
+    <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Expired</label>
+    <div class="col-md-6 col-sm-6 ">
+        <select name="expired" id="heard" class="form-control @error('expired') is-invalid @enderror">
+            <option value="">Choose..</option>
+            <option value="1" {{ $form != 0 ? 'selected' : '' }}>No</option>
+            <option value="0" {{ $form == 0 ? 'selected' : '' }}>Yes</option>
+        </select>
+        @error('status')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
+        {{--        <input id="middle-name" class="form-control" type="text" name="middle-name" value="@if(isset($user)) {{ $user->is_new == 0 ? 'active' : 'not active'}} @endif">--}}
+    </div>
+</div>
 
 
 {{--<div class="item form-group">--}}

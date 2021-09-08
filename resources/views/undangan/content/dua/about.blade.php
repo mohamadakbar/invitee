@@ -34,7 +34,7 @@
                     <img src="{{ asset('/frontend/template/')}}/img/res.png" class="img-fluid" alt="" style="float: left;border-radius: 15px; width: 7%;"><span>RESEPSI</span>
                     <div class="text-body" style="margin-left: 10px;">
                         <h6 style="color: #666666;margin-bottom: 0 !important;font-family: Courgette""><i class="fa fa-calendar"></i>  {{\Carbon\Carbon::parse($form->tgl_res)->format('l, j F Y') }}</h6>
-                        <p style="color: #666666; font-family: Courgette"><i class="fa fa-clock-o"></i>  {{ $form->mulai_res }} WIB - {{ $form->selesai_res }}</p>
+                        <p style="color: #666666; font-family: Courgette"><i class="fa fa-clock-o"></i>  {{ $form->mulai_res }} WIB - {{ $form->selesai_res }} WIB</p>
                         <p style="color: #666666; font-family: Courgette"><i class="fa fa-map-marker"></i>  {{ $form->tempat_res }} {{ $form->alamat_res }}</p>
                     </div>
                 </div>

@@ -24,7 +24,9 @@ class UserController extends Controller
     public function edit($slug)
     {
         $user   = User::with('paket', 'role')->where('slug', $slug)->first();
-        return view('user.edit', ['user' => $user]);
+        $form   = Form::where('id_user', $user->id)->first();
+//        dd($form->is_active);
+        return view('user.edit', ['user' => $user, 'form' => $form->is_active]);
     }
 
     public function update(Request $request, $slug)
@@ -48,12 +50,10 @@ class UserController extends Controller
         // update form table
         $form = Form::where('id_user', $user->id)->first();
         $form->template_id = $request->template_id;
-        $form->is_active = $request->status;
+        $form->is_active = $request->expired;
 
         $form->save();
         $save = $user->save();
-
-
 
         if ($save){
             return redirect('users')->with('success', 'Datanya berhasil di ubah ya ..');

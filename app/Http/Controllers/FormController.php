@@ -26,6 +26,14 @@ class FormController extends Controller
         return view('form.index', ['tmp' => $tmp, 'form' => $form, 'temp' => $temp]);
     }
 
+    public function view_detail($id){
+        $form = Form::where('id_user', $id)->first();
+        $tmp = Undangan::where('id',$form->template_id)->first();
+//        dd($form);
+        $temp = Undangan::all();
+        return view('form.index', ['tmp' => $tmp, 'form' => $form, 'temp' => $temp]);
+    }
+
     public function create()
     {
         $tmp = Undangan::all();
@@ -288,7 +296,11 @@ class FormController extends Controller
 
         $save = $form->save();
         if ($save){
-            return redirect('form')->with(['success' => 'Data kamu sudah berhasil di ubah yaa ..']);
+            if (Auth::user()->roles != 1){
+                return redirect('form')->with(['success' => 'Data kamu sudah berhasil di ubah yaa ..']);
+            }else{
+                return redirect('users')->with(['success' => 'Data user berhasil di ubah yaa ..']);
+            }
         }else{
             return redirect('form')->with(['error' => 'ada error']);
         }

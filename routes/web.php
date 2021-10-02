@@ -23,6 +23,7 @@ Route::get('/dashboard', 'MainController@index')->name('home');
 
 // FORM
 Route::get('/form', 'FormController@index')->name('form');
+Route::get('/form/user/{id}', 'FormController@view_detail')->name('form_detail');
 Route::get('/form/create/', 'FormController@create')->name('form.create');
 Route::get('/form/edit/{slug}', 'FormController@edit')->name('form.edit');
 Route::post('/form/update/{slug}', 'FormController@update')->name('form.update');

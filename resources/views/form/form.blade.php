@@ -92,7 +92,7 @@
                     </div>
                     <div class="form-group row">
                         <label>Nama Panggilan</label>
-                        <input type="hidden" class="form-control" name="id_user" value="{{ Auth::user()->id }}">
+                        <input type="hidden" class="form-control" name="id_user" value="{{ $form->id_user}}">
                         <input type="text" class="form-control @error('nama_panggilan_p')is-invalid @enderror" name="nama_panggilan_p" @if(isset($form)) value="{{ $form->nama_panggilan_p }}" @else value="{{ old('nama_panggilan_p') }}" @endif>
                         @error('nama_panggilan_p')
                         <div class="invalid-feedback">

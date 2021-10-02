@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\Form;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -16,16 +17,15 @@ class UserController extends Controller
     public function index()
     {
         $users  = User::with(['paket', 'role', 'template'])->get();
-//        dd($users);
         $form   = Form::all();
-        return view('user.index', ['users' => $users, 'form' => $form]);
+        $form_view  = Form::where('id_user', Auth::user()->id)->first();
+        return view('user.index', ['form_view' => $form_view, 'users' => $users, 'form' => $form]);
     }
 
     public function edit($slug)
     {
         $user   = User::with('paket', 'role')->where('slug', $slug)->first();
         $form   = Form::where('id_user', $user->id)->first();
-//        dd($form->is_active);
         return view('user.edit', ['user' => $user, 'form' => $form->is_active]);
     }
 

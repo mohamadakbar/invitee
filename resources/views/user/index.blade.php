@@ -19,7 +19,7 @@
     <div class="col-md-12 col-sm-12 ">
         <div class="x_panel">
             <div class="x_title">
-                <h2><small>Daftar Users</small></h2>
+                <h2><small>Daftar User</small></h2>
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -51,22 +51,25 @@
 
                                 <tbody>
                                     @foreach($users as $user)
-                                    <tr>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->created_at }}</td>
-                                        <td>{{ $user->updated_at }}</td>
-                                        <td>{{ $user->paket->nama_paket }}</td>
-                                        <td>{{ $user->role->name }}</td>
-                                        <td>{{ $user->template['nama_template'] }}</td>
-                                        <td>
-                                            <form action="{{ route('users.destroy', ['email' => $user->email]) }}" method="post">
-                                            <a href="/users/{{ $user->slug }}/edit" class="btn btn-sm btn-success">Edit</a>
-                                                @csrf
-                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                        @if( $user->roles !=1 )
+                                            <tr>
+                                                <td>{{ $user->name }}</td>
+                                                <td>{{ $user->email }}</td>
+                                                <td>{{ $user->created_at }}</td>
+                                                <td>{{ $user->updated_at }}</td>
+                                                <td>{{ $user->paket->nama_paket }}</td>
+                                                <td>{{ $user->role->name }}</td>
+                                                <td>{{ $user->template['nama_template'] }}</td>
+                                                <td>
+                                                    <form action="{{ route('users.destroy', ['email' => $user->email]) }}" method="post">
+                                                    <a href="/users/{{ $user->slug }}/edit" class="btn btn-sm btn-success">Edit</a>
+                                                    <a href="/form/user/{{ $user->id }}" class="btn btn-sm btn-primary">Lihat</a>
+                                                        @csrf
+                                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

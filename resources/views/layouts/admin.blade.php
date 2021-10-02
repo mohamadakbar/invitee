@@ -79,7 +79,9 @@
                                 </ul>
                             </li> --}}
                             <li><a href="{{ route('home') }}"><i class="fa fa-home"></i> Home </a></li>
+                            @if(Auth::user()->roles != 1)
                             <li><a href="{{ route('form') }}"><i class="fa fa-edit"></i> Undangan Saya </a>
+                            @endif
                             </li>
 {{--                            <li><a><i class="fa fa-desktop"></i> UI Elements <span--}}
 {{--                                        class="fa fa-chevron-down"></span></a>--}}

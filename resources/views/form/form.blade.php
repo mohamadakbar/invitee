@@ -36,15 +36,16 @@
             <div class="x_content" style="margin-top:1px">
                 <br />
                 <div class="col-md-6">
+
                     <div class="form-group row">
                         <label for="status_und">Status Undangan</label>
                         <select name="status_und" id="" class="form-control" required>
                             <option value="">Pilih..</option>
-
                             <option value="publik" @if(isset($form)) @if($form->status_und == 'publik') {{'selected'}} @endif  @endif>Publik</option>
                             <option value="private" @if(isset($form)) @if($form->status_und == 'private') {{'selected'}} @endif @endif>Private</option>
                         </select>
                     </div>
+
                     <div class="form-group row">
                         <label for="status_und">Design Undangan</label>
                         <select name="template_id" id="template_id" class="form-control" required>
@@ -61,13 +62,36 @@
                             <input type="text" class="form-control" name="link_loc" @if(isset($form)) value="{{ $form->link_loc }}" @endif>
                         </div>
                     </div>
-
-                    <div class="form-group row">
-                        <button type="submit" class="btn btn-success">Simpan</button>
-                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Background music <small></small></h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-12">
+                <input type="file" id="music" name="music"/>
+                <span class="text-danger">{{ $errors->first('music') }}</span>
+                <div id="thumb-output"></div>
+            </div>
+        </div>
+
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Pop up Foto<small></small></h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="form-group row" style="margin-top:auto">
+                <img id="popup-preview" class="img-fluid">
+                <img id="popup" src="@if(isset($form)){{ url('upload_img/'.$form->popup) }}@endif" class="img-fluid">
+            </div>
+            <div class="form-group row">
+                <input type="file" class="form-group ml-2" id="popup-source" name="popup" onchange="previewPopup();" />
+            </div>
+        </div>
+
     </div>
 
 </div>
@@ -92,7 +116,7 @@
                     </div>
                     <div class="form-group row">
                         <label>Nama Panggilan</label>
-                        <input type="hidden" class="form-control" name="id_user" value="{{ $form->id_user}}">
+                        <input type="hidden" class="form-control" name="id_user" @if (isset($form))value="{{ $form->id_user}}" @else value="" @endif>
                         <input type="text" class="form-control @error('nama_panggilan_p')is-invalid @enderror" name="nama_panggilan_p" @if(isset($form)) value="{{ $form->nama_panggilan_p }}" @else value="{{ old('nama_panggilan_p') }}" @endif>
                         @error('nama_panggilan_p')
                         <div class="invalid-feedback">
@@ -404,6 +428,10 @@
 
 </div>
 
+<div class="form-group row">
+    <button type="submit" class="btn btn-success">Simpan</button>
+</div>
+
 
 
 {{--<script>--}}
@@ -437,6 +465,16 @@
         });
     }
 
+    function previewPopup() {
+        document.getElementById("popup-preview").style.display = "block";
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("popup-source").files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            document.getElementById("popup-preview").src = oFREvent.target.result;
+        };
+    }
+
     function previewImage() {
         document.getElementById("image-preview").style.display = "block";
         var oFReader = new FileReader();
@@ -466,67 +504,6 @@
             document.getElementById("image-preview-wanita").src = oFREvent.target.result;
         };
     }
-
-    function previewImageGallery1() {
-        document.getElementById("image-preview-gallery-1").style.display = "block";
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("image-source-gallery-1").files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            document.getElementById("image-preview-gallery-1").src = oFREvent.target.result;
-        };
-    }
-
-    function previewImageGallery2() {
-        document.getElementById("image-preview-gallery-2").style.display = "block";
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("image-source-gallery-2").files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            document.getElementById("image-preview-gallery-2").src = oFREvent.target.result;
-        };
-    }
-
-    function previewImageGallery3() {
-        document.getElementById("image-preview-gallery-3").style.display = "block";
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("image-source-gallery-3").files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            document.getElementById("image-preview-gallery-3").src = oFREvent.target.result;
-        };
-    }
-
-    function previewImageGallery4() {
-        document.getElementById("image-preview-gallery-4").style.display = 'block';
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("image-source-gallery-4").files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            document.getElementById("image-preview-gallery-4").src = oFREvent.target.result;
-        };
-    }
-
-    function previewImageGallery5() {
-        document.getElementById("image-preview-gallery-5").style.display = 'block';
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("image-source-gallery-5").files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            document.getElementById("image-preview-gallery-5").src = oFREvent.target.result;
-        };
-    }
-
-    function previewImageGallery6() {
-        document.getElementById("image-preview-gallery-6").style.display = 'block';
-        var oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("image-source-gallery-6").files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            document.getElementById("image-preview-gallery-6").src = oFREvent.target.result;
-        };
-    }
-
 
 </script>
 

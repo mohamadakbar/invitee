@@ -94,7 +94,7 @@
         <div class="modal-content">
             <div class="container" data-aos="fade-up">
                 <div class="d-flex justify-content-center m-1">
-                    <img src="{{ asset('/frontend/template/img/cvr-dpn.jpeg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
+                    <img src="{{ asset('/upload_img/') }}/{{$form->popup}}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
                 </div>
                 <div class="d-flex justify-content-center m-1" style="font-family: Courgette">
                     Kepada Yth:
@@ -144,46 +144,6 @@
     @foreach($menu as $pages)
         @include('undangan.content.dua.'.$pages->slug)
     @endforeach
-
-    <section id="protocol" class="why-us">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title text-center">
-                {{--                <h2>Gallery</h2>--}}
-                <h1>Himbauan</h1>
-            </div>
-        </div>
-        <div class="container-fluid col-lg-8 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
-                        <p style="font-size: 25px; font-family: 'Patrick Hand', cursive; color: #cda45e">Dalam rangka mencegah penularan <strong>Covid-19</strong>, dimohon untuk dapat melaksanakan protokol kesehatan. Dengan tetap menggunakan masker, menjaga jarak dan mencuci tangan.</p>
-                        <img src="{{ asset('/frontend/template/img/gambar/protokol.png') }}" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="end" class="end">
-        <div class="container-fluid col-lg-8 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
-                        <p style="font-size: 25px">Terima kasih</p>
-                        {{ ucfirst($form->nama_panggilan_p) }} & {{ ucfirst($form->nama_panggilan_w) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <div id="preloader"></div>
-    <audio id="audio">
-        <source src="{{ asset('/frontend/template') }}/audio/audio.mpeg" type="audio/mpeg">
-    </audio>
-    <a class="back-to-top d-flex align-items-center justify-content-center" id="playPauseBTN" onclick="playPause()"><i class="bi bi-music-note"></i></a>
-
     <br>
     <br>
 
@@ -212,6 +172,23 @@
         }, 1);
     }
 </script>
+
+<script>
+    //If you want to copyText from Element
+    function copyTextFromElement(elementID) {
+        let element = document.getElementById(elementID); //select the element
+        let elementText = element.textContent; //get the text content from the element
+        copyText(elementText); //use the copyText function below
+        alert("No Rekening berhasil di copy");
+    }
+
+    //If you only want to put some Text in the Clipboard just use this function
+    // and pass the string to copied as the argument.
+    function copyText(text) {
+        navigator.clipboard.writeText(text);
+    }
+</script>
+
 <script>
     (function () {
         const second = 1000,

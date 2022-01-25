@@ -49,9 +49,9 @@ class FormController extends Controller
             'nama_panggilan_w'  => 'required',
             'nama_lengkap_p'    => 'required',
             'nama_lengkap_w'    => 'required',
-//            'foto_pria'         => 'required',
-//            'foto_wanita'       => 'required',
-//            'foto_sampul'       => 'required',
+            //'foto_pria'         => 'required',
+            //'foto_wanita'       => 'required',
+            //'foto_sampul'       => 'required',
             'template_id'       => 'required',
             'tentang_p'         => 'required',
             'tentang_w'         => 'required',
@@ -77,19 +77,22 @@ class FormController extends Controller
         $foto_gallery   = $request->file('foto_gallery');
         $foto_p         = $request->file('foto_p');
         $foto_w         = $request->file('foto_w');
+        $foto_pop       = $request->file('popup');
+        $music          = $request->file('music');
         $explode_p      = explode(' ', $request->nama_panggilan_p);
         $explode_w      = explode(' ', $request->nama_panggilan_w);
         $slug           = $explode_p[0].'-'.$explode_w[0];
         $tujuan_upload  = 'upload_img';
         $tujuan_gallery = 'gallery_img';
+        $tujuan_music   = 'upload_img/audio';
 
-        $form           = Form::where('id_user', $request->id_user)->first();
+        $form           = Form::where('id_user', $id)->first();
 
         if ( $request->hasfile('foto_sampul') ) {
             $foto_sampul->move($tujuan_upload, $foto_sampul->getClientOriginalName());
             $nama_file          = $foto_sampul->getClientOriginalName();
             $form->foto_sampul  = $nama_file;
-//            unlink('upload_img/'. $form->foto_sampul);
+            //unlink('upload_img/'. $form->foto_sampul);
         }
 
         if ( $foto_gallery ){
@@ -99,7 +102,7 @@ class FormController extends Controller
                     $foto_gallery->move($tujuan_gallery,$foto_gallery->getClientOriginalName());
                     $nama_foto_gallery = $foto_gallery->getClientOriginalName();
                     $files[]=[
-                        'form_id'   => $form->id,
+                        'form_id'   => $id,
                         'foto_gallery' => $nama_foto_gallery,
                     ];
                 }
@@ -112,7 +115,7 @@ class FormController extends Controller
                 $foto_p->move($tujuan_upload,$foto_p->getClientOriginalName());
                 $nama_foto_pria = $foto_p->getClientOriginalName();
                 $form->foto_p   = $nama_foto_pria;
-//                unlink('upload_img/'. $form->foto_p);
+                //unlink('upload_img/'. $form->foto_p);
             }
         }
 
@@ -121,11 +124,29 @@ class FormController extends Controller
                 $foto_w->move($tujuan_upload,$foto_w->getClientOriginalName());
                 $nama_foto_wanita   = $foto_w->getClientOriginalName();
                 $form->foto_w       = $nama_foto_wanita;
-//                unlink('upload_img/'. $form->foto_w);
+                //unlink('upload_img/'. $form->foto_w);
             }
         }
 
-        $form->id_user           = $request->id_user;
+        if ( $request->hasfile('popup') ){
+            if ($foto_pop->isValid()){
+                $foto_pop->move($tujuan_upload,$foto_pop->getClientOriginalName());
+                $nama_foto_popup    = $foto_pop->getClientOriginalName();
+                $form->popup        = $nama_foto_popup;
+                //unlink('upload_img/'. $form->foto_w);
+            }
+        }
+
+        if ($music->isValid()){
+            $nama_music         = $music->getClientOriginalName();
+            $nama_music         = str_replace(" ", "_", $nama_music);
+            $form->music        = $nama_music;
+            $music->move($tujuan_music,$nama_music);
+            //unlink('upload_img/'. $form->foto_w);
+        }
+
+
+        $form->id_user           = $id;
         $form->slug              = strtolower($slug);
         $form->template_id       = $request->template_id;
         $form->nama_panggilan_p  = $request->nama_panggilan_p;
@@ -152,7 +173,7 @@ class FormController extends Controller
         $form->nama_ortu_w_w     = $request->nama_ortu_w_w;
         $form->link_loc          = $request->link_loc;
 
-        $user = User::where('id', $request->id_user)->first();
+        $user = User::where('id', $id)->first();
         $user->is_new   = 1;
         $user->save();
 
@@ -180,21 +201,21 @@ class FormController extends Controller
         }else{
             return view('form.edit', ['tmp' => $temp, 'form' => $form]);
         }
-//            return view('form.edit', ['tmp' => $temp, 'form' => $form]);
-
     }
 
     public function update(Request $request, $slug)
     {
+
+//        print_r($request->file('popup'));die();
         $request->validate([
             'nama_panggilan_p'  => 'required',
             'nama_panggilan_w'  => 'required',
             'nama_lengkap_p'    => 'required',
             'nama_lengkap_w'    => 'required',
-//            'foto_pria'         => 'required',
-//            'foto_wanita'       => 'required',
+            //'foto_pria'         => 'required',
+            //'foto_wanita'       => 'required',
+            //'foto_sampul'       => 'required',
             'template_id'       => 'required',
-//            'foto_sampul'       => 'required',
             'tentang_p'         => 'required',
             'tentang_w'         => 'required',
             'tgl_akad'          => 'required',
@@ -211,7 +232,7 @@ class FormController extends Controller
             'nama_ortu_p_w'     => 'required',
             'nama_ortu_w_p'     => 'required',
             'nama_ortu_w_w'     => 'required',
-            'link_loc'      => 'required',
+            'link_loc'          => 'required',
             'status_und'        => 'required',
         ]);
 
@@ -219,7 +240,10 @@ class FormController extends Controller
         $foto_gallery   = $request->file('foto_gallery');
         $foto_p         = $request->file('foto_p');
         $foto_w         = $request->file('foto_w');
+        $foto_pop       = $request->file('popup');
+        $music          = $request->file('music');
         $tujuan_upload  = 'upload_img';
+        $tujuan_music   = 'upload_img/audio';
         $tujuan_gallery = 'gallery_img';
 
         $form           = Form::where('slug', $slug)->first();
@@ -228,7 +252,7 @@ class FormController extends Controller
             $foto_sampul->move($tujuan_upload, $foto_sampul->getClientOriginalName());
             $nama_file          = $foto_sampul->getClientOriginalName();
             $form->foto_sampul  = $nama_file;
-//            unlink('upload_img/'. $form->foto_sampul);
+            //unlink('upload_img/'. $form->foto_sampul);
         }
 
         if ( $foto_gallery ){
@@ -251,7 +275,7 @@ class FormController extends Controller
                 $foto_p->move($tujuan_upload,$foto_p->getClientOriginalName());
                 $nama_foto_pria = $foto_p->getClientOriginalName();
                 $form->foto_p   = $nama_foto_pria;
-//                unlink('upload_img/'. $form->foto_p);
+                //unlink('upload_img/'. $form->foto_p);
             }
         }
 
@@ -260,7 +284,26 @@ class FormController extends Controller
                 $foto_w->move($tujuan_upload,$foto_w->getClientOriginalName());
                 $nama_foto_wanita   = $foto_w->getClientOriginalName();
                 $form->foto_w       = $nama_foto_wanita;
-//                unlink('upload_img/'. $form->foto_w);
+                //unlink('upload_img/'. $form->foto_w);
+            }
+        }
+
+        if ( $request->hasfile('popup') ){
+            if ($foto_pop->isValid()){
+                $foto_pop->move($tujuan_upload,$foto_pop->getClientOriginalName());
+                $nama_foto_popup    = $foto_pop->getClientOriginalName();
+                $form->popup        = $nama_foto_popup;
+                //unlink('upload_img/'. $form->foto_w);
+            }
+        }
+
+        if ( $request->hasfile('music') ) {
+            if ($music->isValid()) {
+                $nama_music = $music->getClientOriginalName();
+                $nama_music = str_replace(" ", "_", $nama_music);
+                $form->music = $nama_music;
+                $music->move($tujuan_music, $nama_music);
+                //unlink('upload_img/'. $form->foto_w);
             }
         }
 

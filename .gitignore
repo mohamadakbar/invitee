@@ -2,7 +2,7 @@
 /public/hot
 /public/storage
 /storage/*.key
- /vendor
+/vendor
 .env
 .env.backup
 .phpunit.result.cache
@@ -10,8 +10,15 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-/public/backend/gallery_img
-/public/backend/upload_img
-/public/frontend/template
-/public/frontend/web/img
-undangan.sql
+
+# media
+/public/frontend/template/img
+/public/frontend/template/audio
+/public/frontend/web/img/
+/public/gallery_img/
+/public/template/audio/
+/public/upload_img/
+
+# editor
+.idea
+.vscode

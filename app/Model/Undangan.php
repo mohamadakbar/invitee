@@ -13,4 +13,9 @@ class Undangan extends Model
     public function form(){
         return $this->hasMany('App\Model\Form');
     }
+
+    public function user()
+    {
+        return $this->hasMany('App\Model\User');
+    }
 }

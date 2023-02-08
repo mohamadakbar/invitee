@@ -1,0 +1,46 @@
+services:
+
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    env_file: .env
+    working_dir: /app
+    command: bash -c 'php artisan migrate && php artisan serve --host 0.0.0.0'
+    depends_on:
+      - db
+    links:
+      - db
+
+#  composer:
+#    image: composer:latest
+#    working_dir: /app
+#    entrypoint: php /Users/akbar/Documents/garage/private/invitee/artisan serve --host=127.0.0.1
+#    volumes:
+#      - ./app:/app
+#    ports:
+#      - "8009:8000"
+
+  db:
+    image: mariadb:10.5
+    container_name: dev_db
+    environment:
+      MARIADB_ROOT_PASSWORD: qwerty
+      MARIADB_DATABASE: invitee
+      MARIADB_USER: root
+      MARIADB_PASSWORD: qwerty
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+

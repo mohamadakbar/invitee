@@ -44,10 +44,11 @@
 <div class="item form-group">
     <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Template</label>
     <div class="col-md-6 col-sm-6 ">
+        {{ $user->template }}
         <select name="template_id" id="heard" class="form-control @error('template_id') is-invalid @enderror">
             <option value="">Choose..</option>
-            <option value="1" {{ $user->template['id'] == 1 ? 'selected' : '' }}>Calm</option>
-            <option value="2" {{ $user->template['id'] == 2 ? 'selected' : '' }}>Autumn</option>
+            <option value="1" {{ $user->undangan->id == 1 ? 'selected' : '' }}>Calm</option>
+            <option value="2" {{ $user->undangan->id == 2 ? 'selected' : '' }}>Autumn</option>
         </select>
         @error('template_id')
         <div class="invalid-feedback">

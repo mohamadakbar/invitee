@@ -59,7 +59,7 @@
                                                 <td>{{ $user->updated_at }}</td>
                                                 <td>{{ $user->paket->nama_paket }}</td>
                                                 <td>{{ $user->role->name }}</td>
-                                                <td>{{ $user->template['nama_template'] }}</td>
+                                                <td>{{ $user->undangan->nama_template }}</td>
                                                 <td>
                                                     <form action="{{ route('users.destroy', ['email' => $user->email]) }}" method="post">
                                                     <a href="/users/{{ $user->slug }}/edit" class="btn btn-sm btn-success">Edit</a>

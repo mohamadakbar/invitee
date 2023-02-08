@@ -43,6 +43,7 @@ class CreateFormsTable extends Migration
             $table->string('foto_sampul', 50)->nullable();
             $table->string('foto_p', 50)->nullable();
             $table->string('foto_w', 50)->nullable();
+            $table->string('popup', 50)->nullable();
             $table->integer('is_create');
             $table->timestamps();
         });

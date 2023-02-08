@@ -92,7 +92,7 @@
         <div class="modal-content">
             <div class="container" data-aos="fade-up">
                 <div class="d-flex justify-content-center m-1">
-                    <img src="{{ asset('/frontend/template/img/cvr-dpn.jpeg') }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
+                    <img src="{{ asset('/upload_img/'.$form->popup) }}" alt="" style="width: 50%; height: 50%; border-radius: 60%;margin-top: 10%">
                 </div>
                 <div class="d-flex justify-content-center m-1" style="font-family: Courgette">
                     Kepada Yth:

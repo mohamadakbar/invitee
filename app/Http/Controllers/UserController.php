@@ -16,7 +16,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $users  = User::with(['paket', 'role', 'template'])->get();
+        $users  = User::with(['paket', 'role', 'undangan'])->get();
+//        dd($users);
         $form   = Form::all();
         $form_view  = Form::where('id_user', Auth::user()->id)->first();
         return view('user.index', ['form_view' => $form_view, 'users' => $users, 'form' => $form]);
@@ -24,8 +25,9 @@ class UserController extends Controller
 
     public function edit($slug)
     {
-        $user   = User::with('paket', 'role')->where('slug', $slug)->first();
+        $user   = User::with('paket', 'role', 'undangan')->where('slug', $slug)->first();
         $form   = Form::where('id_user', $user->id)->first();
+//        dd($user->undangan->nama_template);
         return view('user.edit', ['user' => $user, 'form' => $form->is_active]);
     }
 

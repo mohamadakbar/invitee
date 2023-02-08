@@ -36,6 +36,7 @@ class UndanganController extends Controller
 //        dd($form->is_active);
 
         $temp   = Undangan::find($form->template_id);
+//        dd($temp);
         $gallery= Gallery::where('form_id', $form->id)->get();
         $ucapan = DB::table('ucapan')->select('ucapan.id', 'ucapan.nama', 'ucapan.slug', 'ucapan.ucapan', 'ucapan.created_at')
                     ->join('form as f', 'f.slug', '=', 'ucapan.slug')

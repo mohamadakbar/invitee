@@ -19,6 +19,7 @@ class CreateMenuTemplatesTable extends Migration
             $table->string('slug', 50);
             $table->string('nama_menu', 50);
             $table->string('nama_template', 50);
+            $table->string('icon', 50);
             $table->timestamps();
         });
     }

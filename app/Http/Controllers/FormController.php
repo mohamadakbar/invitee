@@ -290,6 +290,7 @@ class FormController extends Controller
 
         if ( $request->hasfile('popup') ){
             if ($foto_pop->isValid()){
+            print_r("here");
                 $foto_pop->move($tujuan_upload,$foto_pop->getClientOriginalName());
                 $nama_foto_popup    = $foto_pop->getClientOriginalName();
                 $form->popup        = $nama_foto_popup;

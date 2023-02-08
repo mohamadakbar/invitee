@@ -51,4 +51,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Model\Template');
     }
+
+    public function undangan()
+    {
+        return $this->belongsTo('App\Model\Undangan', 'id');
+    }
 }

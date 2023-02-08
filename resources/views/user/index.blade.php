@@ -20,6 +20,7 @@
         <div class="x_panel">
             <div class="x_title">
                 <h2><small>Daftar User</small></h2>
+                {{ $form_view }}
                 <ul class="nav navbar-right panel_toolbox">
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
@@ -44,11 +45,10 @@
                                         <th>Diubah</th>
                                         <th>Paket</th>
                                         <th>Role</th>
-                                        <th>Template ID</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
                                     @foreach($users as $user)
                                         @if( $user->roles !=1 )
@@ -59,7 +59,14 @@
                                                 <td>{{ $user->updated_at }}</td>
                                                 <td>{{ $user->paket->nama_paket }}</td>
                                                 <td>{{ $user->role->name }}</td>
-                                                <td>{{ $user->undangan->nama_template }}</td>
+                                                @foreach($form as $frm)
+                                                    @if($frm->is_active == 1)
+                                                        <td>Active</td>
+                                                    @else
+                                                        <td>Expired</td>
+                                                    @endif
+                                                @endforeach
+{{--                                                <td>{{ $user->undangan->nama_template }}</td>--}}
                                                 <td>
                                                     <form action="{{ route('users.destroy', ['email' => $user->email]) }}" method="post">
                                                     <a href="/users/{{ $user->slug }}/edit" class="btn btn-sm btn-success">Edit</a>

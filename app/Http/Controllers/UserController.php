@@ -20,6 +20,7 @@ class UserController extends Controller
 //        dd($users);
         $form   = Form::all();
         $form_view  = Form::where('id_user', Auth::user()->id)->first();
+//        dd($form);
         return view('user.index', ['form_view' => $form_view, 'users' => $users, 'form' => $form]);
     }
 
@@ -27,7 +28,6 @@ class UserController extends Controller
     {
         $user   = User::with('paket', 'role', 'undangan')->where('slug', $slug)->first();
         $form   = Form::where('id_user', $user->id)->first();
-//        dd($user->undangan->nama_template);
         return view('user.edit', ['user' => $user, 'form' => $form->is_active]);
     }
 
